@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<meta name="robots" content="index,follow" />
+<meta name="author" content="MangaDex" />
+<meta name="description" content="Read manga online for free at MangaDex with no ads, high quality images and support scanlation groups!" />
+<meta name="keywords" itemprop="keywords" content="Manga, Read Manga, Manga Online, Manga Scans, Free Manga, MangaDex, Scanlation" />
+<meta name="theme-color" content="#eeeeee">
+<meta property="og:site_name" content="MangaDex" />
+<meta property="og:title" content="Login - MangaDex" />
+<meta property="og:image" content="https://mangadex.org/images/misc/default_brand.png?1" />
+<meta property="og:url" content="https://mangadex.org/login" />
+<meta property="og:description" content="Read manga online for free at MangaDex with no ads, high quality images and support scanlation groups!" />
+<meta property="og:type" content="website" />
+<meta name="twitter:site" content="@mangadex" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?1">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?1">
+<link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+<title>Login - MangaDex</title>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TS59XX9');</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:regular,regularitalic,bold" rel="stylesheet">
+
+<link href="/bootstrap/css/bootstrap.css?1531971506" rel="stylesheet" />
+
+<link href="/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+
+<link href="/scripts/owl/assets/owl.carousel.min.css" rel="stylesheet" />
+<link href="/scripts/owl/assets/owl.theme.default.min.css" rel="stylesheet" />
+
+<link href="/fontawesome/css/all.css" rel="stylesheet" />
+
+<link href="/scripts/lightbox2/css/lightbox.min.css" rel="stylesheet">
+
+<link href="/scripts/css/theme.css?1552934274" rel="stylesheet" />
+<link href="/scripts/css/Light.css?1534107774" rel="stylesheet" />
+<script type="module" src="/dist/js/bundle.prod.js"></script>
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TS59XX9"	height="0" width="0" style="display:none; visibility:hidden"></iframe></noscript>
+
+
+<nav class="navbar fixed-top navbar-expand-lg text-nowrap navbar-light bg-light">
+<div class="container">
+<button class="navbar-toggler mr-auto" type="button" data-toggle="modal" data-target="#left_modal">
+<span class="navbar-toggler-icon"></span>
+</button>
+<a class="p-0 navbar-brand" href="https://mangadex.org/"><img class="mx-2" height="38px" src="/images/misc/navbar.svg?3" alt="MangaDex" title="MangaDex" /> <small class="d-lg-none d-xl-inline">MangaDex</small></a>
+<button class="navbar-toggler ml-auto" type="button" data-toggle="modal" data-target="#homepage_settings_modal">
+<span class="navbar-icon"><span class='fas fa-cog fa-fw ' aria-hidden='true'></span></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown mx-1">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class='fas fa-book fa-fw ' aria-hidden='true'></span> Manga</a>
+<div class="dropdown-menu">
+<a class="dropdown-item " href="/titles"><span class='fas fa-book fa-fw ' aria-hidden='true'></span> Titles</a>
+<a class="dropdown-item " href="/updates"><span class='fas fa-sync fa-fw ' aria-hidden='true'></span> Updates</a>
+<a class="dropdown-item " href="/search"><span class='fas fa-search fa-fw ' aria-hidden='true'></span> Search</a>
+<a class="dropdown-item " href="/featured"><span class='fas fa-tv fa-fw ' aria-hidden='true'></span> Featured</a>
+<a class="dropdown-item" href="/manga"><span class='fas fa-question-circle fa-fw ' aria-hidden='true'></span> Random</a>
+<a class="dropdown-item " href="/manga_new"><span class='fas fa-plus-circle fa-fw ' aria-hidden='true'></span> Add</a>
+</div>
+</li>
+<li class="nav-item mx-1" id="login">
+<a class="nav-link" href="/login" title="You need to log in."><span class='fas fa-bookmark fa-fw ' aria-hidden='true'></span> Follows</a>
+</li>
+<li class="nav-item mx-1 dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class='fas fa-users fa-fw ' aria-hidden='true'></span> Community</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="/forums"><span class='fas fa-university fa-fw ' aria-hidden='true' title='Forums'></span> Forums</a>
+<a class="dropdown-item" href="/groups"><span class='fas fa-users fa-fw ' aria-hidden='true' title='Groups'></span> Groups</a>
+<a class="dropdown-item" href="/users"><span class='fas fa-user fa-fw ' aria-hidden='true' title='Users'></span> Users</a>
+<a class="dropdown-item" href="https://discord.gg/Y2YKXUP" target="_blank" rel="nofollow"><span class='fab fa-discord fa-fw ' aria-hidden='true' title='Rules'></span> Discord</a>
+<a class="dropdown-item" href="https://twitter.com/MangaDex" target="_blank" rel="nofollow"><span class='fab fa-twitter fa-fw ' aria-hidden='true' title='Twitter'></span> Twitter</a>
+<a class="dropdown-item" href="https://www.reddit.com/r/mangadex" target="_blank" rel="nofollow"><span class='fab fa-reddit fa-fw ' aria-hidden='true' title='Reddit'></span> Reddit</a>
+<a class="dropdown-item" href="irc://irc.rizon.net/mangadex" rel="nofollow"><span class='fas fa-hashtag fa-fw ' aria-hidden='true' title='IRC'></span> IRC</a>
+</div>
+</li>
+<li class="nav-item mx-1 dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class='fas fa-info-circle fa-fw ' aria-hidden='true'></span> Info</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="/stats"><span class='fas fa-clipboard-list fa-fw ' aria-hidden='true' title='Stats'></span> Stats</a>
+<a class="dropdown-item" href="/rules"><span class='fas fa-list fa-fw ' aria-hidden='true' title='Rules'></span> Rules</a>
+<a class="dropdown-item" href="/about"><span class='fas fa-info fa-fw ' aria-hidden='true' title='About'></span> About</a>
+<a class="dropdown-item" href="/changelog"><span class='fas fa-code fa-fw ' aria-hidden='true' title='Change log'></span> Change log</a>
+</div>
+</li>
+</ul>
+<form id="quick_search_form" method="get" action="/quick_search" role="search" class="form-inline mx-1">
+<div class="input-group">
+<div class="input-group-prepend">
+<select class="form-control" id="quick_search_type">
+<option value="1" data-content="<span class='fas fa-sitemap fa-fw ' aria-hidden='true' ></span> <span class='d-none d-xl-inline'>All</span>">All</option>
+<option selected value="2" data-content="<span class='fas fa-book fa-fw ' aria-hidden='true' ></span> <span class='d-none d-xl-inline'>Manga</span>">Manga</option>
+<option value="3" data-content="<span class='fas fa-users fa-fw ' aria-hidden='true' ></span> <span class='d-none d-xl-inline'>Groups</span>">Groups</option>
+<option value="4" data-content="<span class='fas fa-user fa-fw ' aria-hidden='true' ></span> <span class='d-none d-xl-inline'>Users</span>">Users</option>
+</select>
+</div>
+<input type="text" class="form-control" placeholder="Quick search" name="term" id="quick_search_input" required>
+<span class="input-group-append">
+<button class="btn btn-secondary" type="submit" id="quick_search_button"><span class='fas fa-search fa-fw ' aria-hidden='true'></span></button>
+</span>
+</div>
+</form>
+<ul class="navbar-nav">
+<li class="d-none d-lg-block nav-item mx-1" id="homepage_cog">
+<a class="nav-link" href="#" title="Settings" data-toggle="modal" data-target="#homepage_settings_modal"><span class='fas fa-cog fa-fw ' aria-hidden='true' title='Settings'></span></a>
+</li>
+<li class="nav-item mx-1 dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+<span class='fas fa-user-times fa-fw ' aria-hidden='true'></span> <span class="d-lg-none d-xl-inline" style="color: #000">Guest</span>
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<a class="dropdown-item" href="/login"><span class='fas fa-sign-in-alt fa-fw ' aria-hidden='true' title='Log in'></span> Log in</a>
+<a class="dropdown-item" href="/signup"><span class='fas fa-pencil-alt fa-fw ' aria-hidden='true' title='Sign up'></span> Sign up</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container" role="main" id="content">
+<div id="announcement" class="alert alert-info fade show text-center" role="alert">
+<strong>Announcement (Apr-06):</strong> Check out our latest interview with TheElusiveTaco! <a title="Go to forum thread" href="/thread/72221"><span class='fas fa-external-link-alt fa-fw ' aria-hidden='true' title='Forum thread'></span></a></div>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<div class='alert alert-info text-center' role='alert'><strong>Notice:</strong> Certain features disabled for guests during DDoS mitigation.</div>
+
+<div class="mx-auto form-narrow" id="login_container">
+<form method="post" id="login_form" action="/ajax/actions.ajax.php?function=login&nojs=1">
+<h1 class="text-center">Login</h1>
+<hr>
+<div class="form-group">
+<label for="login_username" class="sr-only">Username</label>
+<input autofocus tabindex="1" type="text" name="login_username" id="login_username" class="form-control" placeholder="Username" required>
+</div>
+<div class="form-group">
+<label for="login_password" class="sr-only">Password</label>
+<input tabindex="2" type="password" name="login_password" id="login_password" class="form-control" placeholder="Password" required>
+</div>
+<div id="2fa_field" class="form-group d-none">
+<label for="two_factor" class="sr-only">2-Factor-Authentication</label>
+<input tabindex="3" type="text" name="two_factor" id="two_factor" class="form-control" placeholder="2FA Code" autocomplete="off" data-lpignore="true">
+</div>
+<div class="form-group">
+<input tabindex="4" type="checkbox" class="" id="remember_me" name="remember_me" value="1">
+<label class="" for="remember_me">Remember me (1 year)</label>
+</div>
+<button tabindex="5" class="btn btn-lg btn-success btn-block" type="submit" id="login_button"><span class='fas fa-sign-in-alt fa-fw ' aria-hidden='true'></span> Login</button>
+<a tabindex="6" href="#" class="btn btn-lg btn-warning btn-block" id="forgot_button"><span class='fas fa-sync fa-fw ' aria-hidden='true'></span> Reset password</a>
+<a tabindex="7" href="/signup" class="btn btn-lg btn-info btn-block" id="signup_button"><span class='fas fa-pencil-alt fa-fw ' aria-hidden='true'></span> Sign up</a>
+</form>
+</div>
+
+<div id="forgot_container" class="mx-auto form-narrow display-none">
+<form method="post" id="reset_form">
+<h1 class="text-center">Reset Password</h1>
+<hr>
+<div class="form-group">
+<label for="reset_email" class="sr-only">Email address</label>
+<input data-toggle="popover" data-content="Enter the email address used when you registered." type="email" name="reset_email" id="reset_email" class="form-control" placeholder="Email Address" required>
+</div>
+<div class="mb-3 g-recaptcha" data-sitekey="6LcmPEgUAAAAAF5AfkGbv0-UXLDtsX_fQVjFOBpW"></div>
+<button class="btn btn-lg btn-danger btn-block" type="submit" id="reset_button"><span class='fas fa-sync fa-fw ' aria-hidden='true'></span> Send reset email</button>
+</form>
+</div>
+</div> 
+
+<div id="message_container" class="display-none"></div>
+
+
+<div class="modal fade" id="homepage_settings_modal" tabindex="-1" role="dialog" aria-labelledby="homepage_settings_label" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="homepage_settings_label"><span class='fas fa-cog fa-fw ' aria-hidden='true'></span> MangaDex settings</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<form method="post" id="homepage_settings_form">
+<div class="form-group row">
+<label for="language" class="col-lg-3 col-form-label-modal">Site theme:</label>
+<div class="col-lg-9">
+<select class="form-control selectpicker" id="theme_id" name="theme_id">
+<option selected value='1'>Light</option><option value='2'>Dark</option><option value='3'>Light-Bronze</option><option value='4'>Dark-Bronze</option><option value='5'>Light-Slate</option><option value='6'>Dark-Slate</option><option value='7'>Abyss</option> </select>
+</div>
+</div>
+<div class="form-group row">
+<label for="default_lang_ids" class="col-lg-3 col-form-label-modal">Filter chapter languages:</label>
+<div class="col-lg-9">
+<select multiple class="form-control selectpicker show-tick" data-actions-box="true" data-selected-text-format="count > 5" data-size="10" id="default_lang_ids" name="default_lang_ids[]" title="All langs">
+<option value='19' data-content="<span class='rounded flag flag-sa' title='Arabic'></span> Arabic">Arabic</option><option value='22' data-content="<span class='rounded flag flag-bd' title='Bengali'></span> Bengali">Bengali</option><option value='14' data-content="<span class='rounded flag flag-bg' title='Bulgarian'></span> Bulgarian">Bulgarian</option><option value='37' data-content="<span class='rounded flag flag-mm' title='Burmese'></span> Burmese">Burmese</option><option value='33' data-content="<span class='rounded flag flag-ct' title='Catalan'></span> Catalan">Catalan</option><option value='21' data-content="<span class='rounded flag flag-cn' title='Chinese (Simp)'></span> Chinese (Simp)">Chinese (Simp)</option><option value='35' data-content="<span class='rounded flag flag-hk' title='Chinese (Trad)'></span> Chinese (Trad)">Chinese (Trad)</option><option value='24' data-content="<span class='rounded flag flag-cz' title='Czech'></span> Czech">Czech</option><option value='20' data-content="<span class='rounded flag flag-dk' title='Danish'></span> Danish">Danish</option><option value='5' data-content="<span class='rounded flag flag-nl' title='Dutch'></span> Dutch">Dutch</option><option value='1' data-content="<span class='rounded flag flag-gb' title='English'></span> English">English</option><option value='34' data-content="<span class='rounded flag flag-ph' title='Filipino'></span> Filipino">Filipino</option><option value='11' data-content="<span class='rounded flag flag-fi' title='Finnish'></span> Finnish">Finnish</option><option value='10' data-content="<span class='rounded flag flag-fr' title='French'></span> French">French</option><option value='8' data-content="<span class='rounded flag flag-de' title='German'></span> German">German</option><option value='13' data-content="<span class='rounded flag flag-gr' title='Greek'></span> Greek">Greek</option><option value='9' data-content="<span class='rounded flag flag-hu' title='Hungarian'></span> Hungarian">Hungarian</option><option value='27' data-content="<span class='rounded flag flag-id' title='Indonesian'></span> Indonesian">Indonesian</option><option value='6' data-content="<span class='rounded flag flag-it' title='Italian'></span> Italian">Italian</option><option value='2' data-content="<span class='rounded flag flag-jp' title='Japanese'></span> Japanese">Japanese</option><option value='28' data-content="<span class='rounded flag flag-kr' title='Korean'></span> Korean">Korean</option><option value='38' data-content="<span class='rounded flag flag-lt' title='Lithuanian'></span> Lithuanian">Lithuanian</option><option value='31' data-content="<span class='rounded flag flag-my' title='Malay'></span> Malay">Malay</option><option value='25' data-content="<span class='rounded flag flag-mn' title='Mongolian'></span> Mongolian">Mongolian</option><option value='30' data-content="<span class='rounded flag flag-ir' title='Persian'></span> Persian">Persian</option><option value='3' data-content="<span class='rounded flag flag-pl' title='Polish'></span> Polish">Polish</option><option value='16' data-content="<span class='rounded flag flag-br' title='Portuguese (Br)'></span> Portuguese (Br)">Portuguese (Br)</option><option value='17' data-content="<span class='rounded flag flag-pt' title='Portuguese (Pt)'></span> Portuguese (Pt)">Portuguese (Pt)</option><option value='23' data-content="<span class='rounded flag flag-ro' title='Romanian'></span> Romanian">Romanian</option><option value='7' data-content="<span class='rounded flag flag-ru' title='Russian'></span> Russian">Russian</option><option value='4' data-content="<span class='rounded flag flag-rs' title='Serbo-Croatian'></span> Serbo-Croatian">Serbo-Croatian</option><option value='15' data-content="<span class='rounded flag flag-es' title='Spanish (Es)'></span> Spanish (Es)">Spanish (Es)</option><option value='29' data-content="<span class='rounded flag flag-mx' title='Spanish (LATAM)'></span> Spanish (LATAM)">Spanish (LATAM)</option><option value='18' data-content="<span class='rounded flag flag-se' title='Swedish'></span> Swedish">Swedish</option><option value='32' data-content="<span class='rounded flag flag-th' title='Thai'></span> Thai">Thai</option><option value='26' data-content="<span class='rounded flag flag-tr' title='Turkish'></span> Turkish">Turkish</option><option value='36' data-content="<span class='rounded flag flag-ua' title='Ukrainian'></span> Ukrainian">Ukrainian</option><option value='12' data-content="<span class='rounded flag flag-vn' title='Vietnamese'></span> Vietnamese">Vietnamese</option> </select>
+</div>
+</div>
+<div class="form-group row">
+<label for="display_language" class="col-lg-3 col-form-label-modal">User interface language:</label>
+<div class="col-lg-9">
+<select class="form-control selectpicker" id="display_lang_id" name="display_lang_id" data-size="10">
+<option value='19' data-content="<span class='rounded flag flag-sa' title='Arabic'></span> Arabic">Arabic</option><option value='22' data-content="<span class='rounded flag flag-bd' title='Bengali'></span> Bengali">Bengali</option><option value='14' data-content="<span class='rounded flag flag-bg' title='Bulgarian'></span> Bulgarian">Bulgarian</option><option value='37' data-content="<span class='rounded flag flag-mm' title='Burmese'></span> Burmese">Burmese</option><option value='33' data-content="<span class='rounded flag flag-ct' title='Catalan'></span> Catalan">Catalan</option><option value='21' data-content="<span class='rounded flag flag-cn' title='Chinese (Simp)'></span> Chinese (Simp)">Chinese (Simp)</option><option value='35' data-content="<span class='rounded flag flag-hk' title='Chinese (Trad)'></span> Chinese (Trad)">Chinese (Trad)</option><option value='24' data-content="<span class='rounded flag flag-cz' title='Czech'></span> Czech">Czech</option><option value='20' data-content="<span class='rounded flag flag-dk' title='Danish'></span> Danish">Danish</option><option value='5' data-content="<span class='rounded flag flag-nl' title='Dutch'></span> Dutch">Dutch</option><option selected value='1' data-content="<span class='rounded flag flag-gb' title='English'></span> English">English</option><option value='34' data-content="<span class='rounded flag flag-ph' title='Filipino'></span> Filipino">Filipino</option><option value='11' data-content="<span class='rounded flag flag-fi' title='Finnish'></span> Finnish">Finnish</option><option value='10' data-content="<span class='rounded flag flag-fr' title='French'></span> French">French</option><option value='8' data-content="<span class='rounded flag flag-de' title='German'></span> German">German</option><option value='13' data-content="<span class='rounded flag flag-gr' title='Greek'></span> Greek">Greek</option><option value='9' data-content="<span class='rounded flag flag-hu' title='Hungarian'></span> Hungarian">Hungarian</option><option value='27' data-content="<span class='rounded flag flag-id' title='Indonesian'></span> Indonesian">Indonesian</option><option value='6' data-content="<span class='rounded flag flag-it' title='Italian'></span> Italian">Italian</option><option value='2' data-content="<span class='rounded flag flag-jp' title='Japanese'></span> Japanese">Japanese</option><option value='28' data-content="<span class='rounded flag flag-kr' title='Korean'></span> Korean">Korean</option><option value='38' data-content="<span class='rounded flag flag-lt' title='Lithuanian'></span> Lithuanian">Lithuanian</option><option value='31' data-content="<span class='rounded flag flag-my' title='Malay'></span> Malay">Malay</option><option value='25' data-content="<span class='rounded flag flag-mn' title='Mongolian'></span> Mongolian">Mongolian</option><option value='30' data-content="<span class='rounded flag flag-ir' title='Persian'></span> Persian">Persian</option><option value='3' data-content="<span class='rounded flag flag-pl' title='Polish'></span> Polish">Polish</option><option value='16' data-content="<span class='rounded flag flag-br' title='Portuguese (Br)'></span> Portuguese (Br)">Portuguese (Br)</option><option value='17' data-content="<span class='rounded flag flag-pt' title='Portuguese (Pt)'></span> Portuguese (Pt)">Portuguese (Pt)</option><option value='23' data-content="<span class='rounded flag flag-ro' title='Romanian'></span> Romanian">Romanian</option><option value='7' data-content="<span class='rounded flag flag-ru' title='Russian'></span> Russian">Russian</option><option value='4' data-content="<span class='rounded flag flag-rs' title='Serbo-Croatian'></span> Serbo-Croatian">Serbo-Croatian</option><option value='15' data-content="<span class='rounded flag flag-es' title='Spanish (Es)'></span> Spanish (Es)">Spanish (Es)</option><option value='29' data-content="<span class='rounded flag flag-mx' title='Spanish (LATAM)'></span> Spanish (LATAM)">Spanish (LATAM)</option><option value='18' data-content="<span class='rounded flag flag-se' title='Swedish'></span> Swedish">Swedish</option><option value='32' data-content="<span class='rounded flag flag-th' title='Thai'></span> Thai">Thai</option><option value='26' data-content="<span class='rounded flag flag-tr' title='Turkish'></span> Turkish">Turkish</option><option value='36' data-content="<span class='rounded flag flag-ua' title='Ukrainian'></span> Ukrainian">Ukrainian</option><option value='12' data-content="<span class='rounded flag flag-vn' title='Vietnamese'></span> Vietnamese">Vietnamese</option> </select>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-lg-3 text-right">
+<button type="submit" class="btn btn-secondary" id="homepage_settings_button"><span class='fas fa-save fa-fw ' aria-hidden='true'></span> Save</button>
+</div>
+<div class="col-lg-9 text-left">
+</div>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+<div class='alert alert-info mx-auto text-center' role='alert'><strong>Info:</strong> These settings are temporary. Please <span class='fas fa-pencil-alt fa-fw ' aria-hidden='true'></span> <a href='/signup'>make an account</a> to remember these permanently.</div> </div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="report_modal" tabindex="-1" role="dialog" aria-labelledby="report_modal_label" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<form id="report_modal_form" action="/ajax/actions.ajax.php?source=nojs&function=report_submit" method="post">
+<div class="modal-header">
+<h5 class="modal-title" id="report_modal_title">Submit new Report</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body container">
+<div class="report-item report-item-manga row">
+<div class="col col-2"><img src="#" alt="Thumb"></div>
+<div class="col col-10">
+<span class="ellipsis">
+<span class="fas fa-book fa-fw " aria-hidden="true" title="Title"></span>
+<span class="manga_title">Manga Title</span>
+</span>
+</div>
+</div>
+<div class="report-item report-item-comment row">
+<div class="col">
+<div class="alert alert-warning">
+Please note, that not every report is actionable. If you don't like a particular user's posts, consider blocking (from their profile page) instead.
+</div>
+<label>Reported Post:</label><br />
+<div class="alert alert-info">
+<div class="ellipsis report-item-comment-text"></div>
+</div>
+</div>
+</div>
+<div class="form-group row">
+<label for="info" class="col">Report Reason:</label>
+</div>
+<div class="form-group row">
+<div class="col">
+<select class="form-control selectpicker" id="reason_id" name="reason_id" tabindex="-90" required="required">
+<option value="" selected>- Select A Reason -</option>
+<option data-type-id="2" value="1">All images broken</option>
+<option data-type-id="2" value="2" required="required">Some images broken</option>
+<option data-type-id="2" value="3" required="required">Watermarked images</option>
+<option data-type-id="2" value="4" required="required">Naming rules broken</option>
+<option data-type-id="2" value="5" required="required">Incorrect group</option>
+<option data-type-id="2" value="6" required="required">Group policy evasion</option>
+<option data-type-id="2" value="7" required="required">Official release/Raw</option>
+<option data-type-id="2" value="8" required="required">Other</option>
+<option data-type-id="3" value="9">Spoilers</option>
+<option data-type-id="3" value="10">Aggregator links</option>
+<option data-type-id="3" value="11">Unwanted solicitation</option>
+<option data-type-id="3" value="12">Racism</option>
+<option data-type-id="3" value="13" required="required">Sexism</option>
+<option data-type-id="3" value="14">Religious Discrimination</option>
+<option data-type-id="3" value="15">Direct Personal Attack</option>
+<option data-type-id="3" value="16" required="required">Other</option>
+</select>
+</div>
+</div>
+<div class="form-group row">
+<label for="info" class="col">Additional Info:</label>
+</div>
+<div class="form-group row">
+<div class="col">
+<textarea class="form-control" rows="5" name="info" id="info" placeholder="Please be as descriptive as possible in your report. If possible, include any recommended fixes."></textarea>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<input type="hidden" name="return_url" value="https://mangadex.org/login" />
+<input type="hidden" name="item_id" value="-1" />
+<input type="hidden" name="type_id" value="-1" />
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<footer class="footer">
+<p class="m-0 text-center text-muted">&copy; 2018 - 2019 <a href="/" title="Array
+(
+    [0] => 13
+    [1] => 1554656189
+)
+">MangaDex</a> | Powered by <a href="https://path.net/" title="Provider of CDN and DDoS mitigation services" target="_blank">Path Network</a></p>
+</footer>
+<div id="right_swipe_area" style="position: fixed; top: 0; right: 0px; z-index: 1000; height: 100vh; width: 15px;">&nbsp;</div>
+<div id="left_swipe_area" style="position: fixed; top: 0; left: 0px; z-index: 1000; height: 100vh; width: 15px;">&nbsp;</div>
+
+<div class="modal left fade" id="left_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content border-0">
+<nav class="navbar fixed-top text-nowrap navbar-light bg-light">
+<div class="container p-0">
+<div class="dropdown">
+<a href="#" class="dropdown-toggle no-underline" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+<span class='fas fa-user-times fa-fw ' aria-hidden='true'></span> <span class="d-lg-none d-xl-inline" style="color: #000">Guest</span>
+</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="/login"><span class='fas fa-sign-in-alt fa-fw ' aria-hidden='true'></span> Log in</a>
+<a class="dropdown-item" href="/signup"><span class='fas fa-pencil-alt fa-fw ' aria-hidden='true'></span> Sign up</a>
+</div>
+</div>
+<button class="navbar-toggler ml-auto" type="button">
+<a class="" href="/login"><span class="navbar-icon"><span class='fas fa-sign-in-alt fa-fw ' aria-hidden='true'></span></span></a>
+</button>
+</div>
+</nav>
+<nav style="margin-top: 70px;" class="nav flex-column">
+<div class="dropdown nav-link">
+<a href="#" class="dropdown-toggle no-underline" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class='fas fa-book fa-fw ' aria-hidden='true'></span> Manga</a>
+<div class="dropdown-menu">
+<a class="dropdown-item " href="/titles"><span class='fas fa-book fa-fw ' aria-hidden='true'></span> Titles</a>
+<a class="dropdown-item " href="/updates"><span class='fas fa-sync fa-fw ' aria-hidden='true'></span> Updates</a>
+<a class="dropdown-item " href="/search"><span class='fas fa-search fa-fw ' aria-hidden='true'></span> Search</a>
+<a class="dropdown-item " href="/featured"><span class='fas fa-tv fa-fw ' aria-hidden='true'></span> Featured</a>
+<a class="dropdown-item" href="/manga"><span class='fas fa-question-circle fa-fw ' aria-hidden='true'></span> Random</a>
+<a class="dropdown-item " href="/manga_new"><span class='fas fa-plus-circle fa-fw ' aria-hidden='true'></span> Add</a>
+</div>
+</div>
+<a class="nav-link no-underline" href="/login" title="You need to log in."><span class='fas fa-bookmark fa-fw ' aria-hidden='true'></span> Follows</a>
+<div class="dropdown nav-link">
+<a href="#" class="dropdown-toggle no-underline" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class='fas fa-users fa-fw ' aria-hidden='true'></span> Community</a>
+<div class="dropdown-menu">
+<a class="dropdown-item " href="/forums"><span class='fas fa-university fa-fw ' aria-hidden='true'></span> Forums</a>
+<a class="dropdown-item " href="/groups"><span class='fas fa-users fa-fw ' aria-hidden='true'></span> Groups</a>
+<a class="dropdown-item " href="/users"><span class='fas fa-user fa-fw ' aria-hidden='true'></span> Users</a>
+<a class="dropdown-item" href="https://discord.gg/Y2YKXUP" target="_blank" rel="nofollow"><span class='fab fa-discord fa-fw ' aria-hidden='true' title='Rules'></span> Discord</a>
+<a class="dropdown-item" href="https://twitter.com/MangaDex" target="_blank" rel="nofollow"><span class='fab fa-twitter fa-fw ' aria-hidden='true' title='Twitter'></span> Twitter</a>
+<a class="dropdown-item" href="https://www.reddit.com/r/mangadex" target="_blank" rel="nofollow"><span class='fab fa-reddit fa-fw ' aria-hidden='true' title='Reddit'></span> Reddit</a>
+<a class="dropdown-item" href="irc://irc.rizon.net/mangadex" rel="nofollow"><span class='fas fa-hashtag fa-fw ' aria-hidden='true' title='IRC'></span> IRC</a>
+</div>
+</div>
+<div class="dropdown nav-link">
+<a href="#" class="dropdown-toggle no-underline" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class='fas fa-info-circle fa-fw ' aria-hidden='true'></span> Info</a>
+<div class="dropdown-menu">
+<a class="dropdown-item " href="/stats"><span class='fas fa-clipboard-list fa-fw ' aria-hidden='true' title='Stats'></span> Stats</a>
+<a class="dropdown-item " href="/rules"><span class='fas fa-list fa-fw ' aria-hidden='true' title='Rules'></span> Rules</a>
+<a class="dropdown-item " href="/about"><span class='fas fa-info fa-fw ' aria-hidden='true' title='About'></span> About</a>
+<a class="dropdown-item " href="/changelog"><span class='fas fa-code fa-fw ' aria-hidden='true' title='Change log'></span> Change log</a>
+</div>
+</div>
+</nav>
+<form id="quick_search_form_m" method="get" action="/quick_search" role="search" class="form-inline px-3 py-2">
+<div class="input-group">
+<div class="input-group-prepend">
+<select class="form-control" id="quick_search_type_m">
+<option value="1" data-content="<span class='fas fa-sitemap fa-fw ' aria-hidden='true' ></span> <span class='d-none d-xl-inline'>All</span>">All</option>
+<option selected value="2" data-content="<span class='fas fa-book fa-fw ' aria-hidden='true' ></span> <span class='d-none d-xl-inline'>Manga</span>">Manga</option>
+<option value="3" data-content="<span class='fas fa-users fa-fw ' aria-hidden='true' ></span> <span class='d-none d-xl-inline'>Groups</span>">Groups</option>
+<option value="4" data-content="<span class='fas fa-user fa-fw ' aria-hidden='true' ></span> <span class='d-none d-xl-inline'>Users</span>">Users</option>
+</select>
+</div>
+<input type="text" class="form-control" placeholder="Quick search" name="term" id="quick_search_input_m" required>
+<span class="input-group-append">
+<button class="btn btn-secondary" id="quick_search_button_m" type="submit"><span class='fas fa-search fa-fw ' aria-hidden='true'></span></button>
+</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class="modal right fade" id="right_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+<div class="modal-dialog" role="document">
+<div class="modal-content border-0">
+<nav class="navbar fixed-top text-nowrap navbar-light bg-light">
+<div class="container p-0">
+<a class="p-0 navbar-brand" href="https://mangadex.org/"><img class="mx-2" height="38px" src="/images/misc/navbar.svg?3" alt="MikuDex" title="MikuDex" /> <small class="d-lg-none d-xl-inline">MikuDex</small></a>
+</div>
+</nav>
+<div class="modal-body">
+<img src="https://i.imgur.com/DIRXuFB.jpg" width="100%" />
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="/scripts/jquery.min.js?1552433701"></script>
+<script src="/scripts/jquery.touchSwipe.min.js"></script>
+<script src="/bootstrap/js/popper.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js?1"></script>
+<script src="/bootstrap/js/bootstrap-select.min.js?1"></script>
+<script src="/scripts/lightbox2/js/lightbox.js"></script>
+<script src="/scripts/chart.min.js"></script>
+<script nomodule src="/dist/js/bundle.prod.js"></script>
+<script src="/scripts/js/reporting.js"></script>
+<script type="text/javascript">
+
+    	var t='mang';
+		t = t+'adex.org';
+	var w='www.mangadex.org';
+	if (window.location.hostname != t && window.location.hostname != w ) {
+		window.location='https://'+t;
+	}
+    
+	var $ = jQuery;
+
+	$(document).on('change', '.btn-file :file', function() {
+		var input = $(this),
+			numFiles = input.get(0).files ? input.get(0).files.length : 1,
+			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+		input.trigger('fileselect', [numFiles, label]);
+	});
+
+	function capitalizeFirstLetter(string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+
+	function commaMultipleSelect(id) {
+		var list = document.getElementById(id);
+		var selected = new Array();
+
+		for (i = 0; i < list.options.length; i++) {
+			if (list.options[i].selected) {
+				 selected.push(list.options[i].value);
+			}
+		}
+
+		return selected.join(',');
+	}
+
+	function commaMultipleCheckbox(name) {
+		var list = document.getElementsByName(name);
+		var selected = new Array();
+
+		for (i = 0; i < list.length; i++) {
+			if (list[i].checked) {
+				 selected.push(list[i].value);
+			}
+		}
+
+		return selected.join(',');
+	}
+		
+	$(document).ready(function(){
+		var query = location.search;
+		
+				$("#left_swipe_area").swipe({
+			swipeRight:function(event, direction, distance, duration, fingerCount) {
+				$('#left_modal').modal('toggle');
+			},
+			threshold: 50
+		});
+		$("#right_swipe_area").swipe({
+			swipeLeft:function(event, direction, distance, duration, fingerCount) {
+				$('#right_modal').modal('toggle');
+			},
+			threshold: 50
+		});
+		$("#right_modal").swipe({
+			swipeRight:function(event, direction, distance, duration, fingerCount) {
+				$('#right_modal').modal('toggle');
+			},
+			threshold: 50
+		});
+		$("#left_modal").swipe({
+			swipeLeft:function(event, direction, distance, duration, fingerCount) {
+				$('#left_modal').modal('toggle');
+			},
+			threshold: 50
+		});
+				
+		$("#read_announcement_button").click(function(event){
+			$.ajax({
+				url: "/ajax/actions.ajax.php?function=read_announcement",
+				type: 'GET',
+				success: function (data) {
+					$("#announcement").hide();
+				},
+				cache: false,
+				contentType: false,
+				processData: false
+			});
+			event.preventDefault();
+		});
+
+		$(".logout").click(function(event){
+			$.ajax({
+				type: "POST",
+				url: "/ajax/actions.ajax.php?function=logout",
+				success: function(data) {
+					$("#message_container").html(data).show().delay(1500).fadeOut();
+					location.reload();
+				}
+			});
+			event.preventDefault();
+		});
+
+		$("#quick_search_form").submit(function(event) {
+			var type = $("#quick_search_type").val();
+			var search_title = $("#quick_search_input").val();
+			$("#quick_search_button").html("<span class='fas fa-spinner fa-fw fa-pulse' aria-hidden='true' ></span>").attr("disabled", true);
+			if (type == 1)
+				location.href = "/quick_search/"+search_title;
+			if (type == 2)
+				location.href = "/search?title="+search_title;
+			if (type == 3)
+				location.href = "/groups/0/1/"+search_title;
+			if (type == 4)
+				location.href = "/users/0/1/"+search_title;
+
+			event.preventDefault();
+		});
+		
+		$("#quick_search_form_m").submit(function(event) {
+			var type = $("#quick_search_type_m").val();
+			var search_title = $("#quick_search_input_m").val();
+			$("#quick_search_button_m").html("<span class='fas fa-spinner fa-fw fa-pulse' aria-hidden='true' ></span>").attr("disabled", true);
+			if (type == 1)
+				location.href = "/quick_search/"+search_title;
+			if (type == 2)
+				location.href = "/search?title="+search_title;
+			if (type == 3)
+				location.href = "/groups/0/1/"+search_title;
+			if (type == 4)
+				location.href = "/users/0/1/"+search_title;
+
+			event.preventDefault();
+		});
+
+        function highlightPost(node) {
+            if (node) {
+                Array.from(document.querySelectorAll('.highlighted')).forEach(function(n) {n.classList.remove('highlighted')});
+                node.classList.add('highlighted')
+            }
+        }
+
+        if (location.hash)
+            highlightPost(document.querySelector(location.hash + ' .postbody'));
+
+        $('a.permalink').click(function(event) {
+            highlightPost(event.target.closest('.post').querySelector('.postbody'))
+        });
+
+		
+	$('#homepage_settings_form').submit(function(event) {
+
+		Array.prototype.slice.call(this.querySelectorAll('input[type=file]'))
+		.filter(function(n) { return n && !n.files.length })
+		.forEach(function(n) { n.parentNode.removeChild(n) });
+
+		var formData = new FormData($(this)[0]);
+
+		var success_msg = "<div class='alert alert-success text-center' role='alert'><strong>Success:</strong> Your MangaDex settings have been saved.</div>";
+
+		$('#homepage_settings_button').html("<span class='fas fa-spinner fa-fw fa-pulse' aria-hidden='true' ></span> Saving...").attr('disabled', true);
+
+		$.ajax({
+			url: '/ajax/actions.ajax.php?function=homepage_settings',
+			type: 'POST',
+			data: formData,
+			cache: false,
+			headers: {'cache-control': 'no-cache'},
+			contentType: false,
+			processData: false,
+			async: true,
+			success: function (data) {
+				if (!data) {
+					$('#message_container').html(success_msg).show().delay(3000).fadeOut();
+					location.reload();
+				}
+				else {
+					$('#message_container').html(data).show().delay(3000).fadeOut();
+				}
+				}
+		});
+
+		event.preventDefault();
+	});
+	
+$("#login_form").submit(function(event) {
+	event.preventDefault();
+
+	//validate input
+	
+	var success_msg = "<div class='alert alert-success text-center' role='alert'><strong>Success:</strong> You have logged in.</div>";
+
+	var formData = new FormData($(this)[0]);
+	
+	$("#login_button").html("<span class='fas fa-spinner fa-fw fa-pulse' aria-hidden='true' ></span> Logging in...").attr("disabled", true);
+	
+	$.ajax({
+		url: "/ajax/actions.ajax.php?function=login",
+		type: 'POST',
+		data: formData,
+		success: function(data) {
+			if (!data) {
+				location.href = "https://mangadex.org/login";
+			}
+			else if (data == 'missing_2fa') {
+
+				let b = $("#login_button");
+				b.html("<span class='fas fa-sign-in-alt fa-fw ' aria-hidden='true' title='fas'></span> Login with 2FA");
+				b.removeAttr("disabled");
+
+				let f = $('#2fa_field');
+				f.removeClass('d-none');
+				f = $(f).find('input');
+				f.focus();
+				f.attr('required', true);
+			}
+			else {
+				$("#message_container").html(data).show().delay(1500).fadeOut();
+				$("#login_button").html("Log in").removeAttr("disabled");
+			}
+		},
+		cache: false,
+		contentType: false,
+		processData: false
+	});
+	
+});
+
+$("#reset_form").submit(function(event) {
+	//validate input
+
+	var success_msg = "<div class='alert alert-success text-center' role='alert'><strong>Success:</strong> Check your email for your reset code.</div>";
+
+	var formData = new FormData($(this)[0]);
+	
+	$("#reset_button").html("<span class='fas fa-spinner fa-fw fa-pulse' aria-hidden='true' ></span> Sending password...").attr("disabled", true);
+	
+	$.ajax({
+		url: "/ajax/actions.ajax.php?function=reset_email",
+		type: 'POST',
+		data: formData,
+		success: function(data) {
+			if (!data) {
+				$("#forgot_container").hide();
+				$("#login_container").fadeIn();
+				$("#message_container").html(success_msg).show().delay(1500).fadeOut();
+				$("#reset_button").html("<span class='fas fa-spinner fa-fw fa-fw' aria-hidden='true' ></span> Reset Password").attr("disabled", false);
+			}
+			else {
+				$("#message_container").html(data).show().delay(1500).fadeOut();
+				$("#reset_button").html("<span class='fas fa-spinner fa-fw fa-fw' aria-hidden='true' ></span> Reset Password").attr("disabled", false);
+			}
+		},
+		cache: false,
+		contentType: false,
+		processData: false
+	});
+
+	event.preventDefault();
+});
+
+$("#forgot_button").click(function(){
+	$("#login_container").hide();
+	$("#forgot_container").fadeIn();
+});	
+
+		
+		
+	});
+
+	</script>
+</body>
+</html>
