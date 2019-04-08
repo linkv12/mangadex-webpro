@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Login - MangaDex</title>
+	<title>MangaDex</title>
 	<base href="<?php echo base_url(); ?>" >
 	<script type="text/javascript" async="" src="<?= base_url(); ?>/assets/js/analytics.js.download"></script>
 	<script type="text/javascript" async="" src="<?= base_url(); ?>/assets/js/recaptcha__en.js.download"></script>
@@ -125,8 +125,8 @@
 							<span class="fa fa-user-times fa-fw " aria-hidden="true"></span> <span class="d-lg-none d-xl-inline" style="color: #000">Guest</span>
 						</a>
 						<div class="dropdown-menu dropdown-menu-right">
-							<a class="dropdown-item" href="https://mangadex.org/login"><span class="fa fa-sign-in fa-fw " aria-hidden="true" title="Log in"></span> Log in</a>
-							<a class="dropdown-item" href="https://mangadex.org/signup"><span class="fa fa-pencil fa-fw " aria-hidden="true" title="Sign up"></span> Sign up</a>
+							<a class="dropdown-item" href="<?= base_url() ?>C_login"><span class="fa fa-sign-in fa-fw " aria-hidden="true" title="Log in"></span> Log in</a>
+							<a class="dropdown-item" href="<?= base_url() ?>C_register"><span class="fa fa-pencil fa-fw " aria-hidden="true" title="Sign up"></span> Sign up</a>
 						</div>
 					</li>
 				</ul>
