@@ -118,10 +118,10 @@
 				</form>
 				<ul class="navbar-nav">
 					<li class="d-none d-lg-block nav-item mx-1" id="homepage_cog">
-						<a class="nav-link" href="./Login - MangaCat_files/login" title="Settings" data-toggle="modal" data-target="#homepage_settings_modal"><span class="fa fa-cog fa-fw " aria-hidden="true" title="Settings"></span></a>
+						<a class="nav-link" href="#" title="Settings" data-toggle="modal" data-target="#homepage_settings_modal"><span class="fa fa-cog fa-fw " aria-hidden="true" title="Settings"></span></a>
 					</li>
 					<li class="nav-item mx-1 dropdown">
-						<a href="./Login - MangaCat_files/login" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<a href="<?= base_url()?>#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 							<span class="fa fa-user-times fa-fw " aria-hidden="true"></span> <span class="d-lg-none d-xl-inline" style="color: #000">Guest</span>
 						</a>
 						<div class="dropdown-menu dropdown-menu-right">

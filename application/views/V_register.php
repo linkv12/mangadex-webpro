@@ -1,9 +1,15 @@
 	<div class="container" role="main" id="content">
+		<?php if($this->session->flashdata('flash')) : ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Failed :</strong> Email is already registered
+			</div>
+		<?php endif; ?>
 		<div id="announcement" class="alert alert-success fade show text-center" role="alert">
-			<strong>Announcement (Apr-01):</strong> Rebranding and advertisements <a title="Go to forum thread" href="https://mangadex.org/thread/70656"><span class="fa fa-external-link fa-fw " aria-hidden="true" title="Forum thread"></span></a></div>
-				<script src="./Signup - MangaCat_files/api.js.download"></script>
+			<strong>Announcement (Apr-01):</strong> Rebranding and advertisements <a title="Go to forum thread" href="https://mangadex.org/thread/70656">
+				<span class="fa fa-external-link fa-fw " aria-hidden="true" title="Forum thread"></span></a>
+			</div>
 				<div class="mx-auto form-narrow" id="signup_container">
-					<form method="post" id="signup_form">
+					<form method="post" id="signup_form" action="<?= base_url() ?>C_register/daftar">
 						<h1 class="text-center">Sign up</h1>
 						<hr>
 						<div class="form-group">
@@ -26,7 +32,7 @@
 							<label for="reg_email2" class="sr-only">Confirm Email Address</label>
 							<input data-toggle="popover" data-content="Type your email again." type="email" name="reg_email2" id="reg_email2" class="form-control" placeholder="Email Address (again)" required="" data-original-title="" title="">
 						</div>
-						<button class="btn btn-lg btn-success btn-block" type="submit" id="signup_button"><span class="fa fa-pencil fa-fw " aria-hidden="true"></span> Sign up</button>
+						<button class="btn btn-lg btn-success btn-block" type="submit" id="signup_button" name="daftar"><span class="fa fa-pencil fa-fw " aria-hidden="true"></span> Sign up</button>
 					</form>
 				</div>
 			</div> 

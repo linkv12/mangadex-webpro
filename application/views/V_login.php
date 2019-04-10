@@ -5,7 +5,7 @@
 			<div class="alert alert-info text-center" role="alert"><strong>Notice:</strong> Certain features disabled for guests during DDoS mitigation.</div>
 
 			<div class="mx-auto form-narrow" id="login_container">
-				<form method="post" id="login_form" action="https://mangadex.org/ajax/actions.ajax.php?function=login&amp;nojs=1">
+				<form method="post" id="login_form" action="<?= base_url()?>C_login/login_process">
 					<h1 class="text-center">Login</h1>
 					<hr>
 					<div class="form-group">
@@ -21,8 +21,8 @@
 						<label class="" for="remember_me">Remember me</label>
 					</div>
 					<button tabindex="5" class="btn btn-lg btn-success btn-block" type="submit" id="login_button"><span class="fa fa-sign-in fa-fw " aria-hidden="true"></span> Login</button>
-					<a tabindex="6" href="./Login - MangaCat_files/login" class="btn btn-lg btn-warning btn-block" id="forgot_button"><span class="fa fa-sync fa-fw " aria-hidden="true"></span> Reset password</a>
-					<a tabindex="7" href="https://mangadex.org/signup" class="btn btn-lg btn-info btn-block" id="signup_button"><span class="fa fa-pencil fa-fw " aria-hidden="true"></span> Sign up</a>
+					<a tabindex="6" href="#" class="btn btn-lg btn-warning btn-block" id="forgot_button"><span class="fa fa-sync fa-fw " aria-hidden="true"></span> Reset password</a>
+					<a tabindex="7" href="<?= base_url()?>C_register" class="btn btn-lg btn-info btn-block" id="signup_button"><span class="fa fa-pencil fa-fw " aria-hidden="true"></span> Sign up</a>
 				</form>
 			</div>
 

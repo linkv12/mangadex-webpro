@@ -13,5 +13,10 @@
 			$this->load->view('V_login');
 			$this->load->view('templates/page_footer');
 		}
+
+		public function login_process()
+		{
+			
+		}
 	}
 ?>
