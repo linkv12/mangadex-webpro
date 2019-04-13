@@ -59,5 +59,16 @@
           </form>
         </div>
       </nav>
+
+      <form action="<?= site_url('/MangaController/Search')?>" method="POST" class="register-form" id="login-form">
+        <div class="form-group">
+            <label for="title"><i class="zmdi zmdi-account material-icons-name"></i></label>
+            <input type="text" name="title" id="title" placeholder="Title" required/>
+        </div>
+        <div class="form-group form-button">
+            <input type="submit" name="search" id="search" class="form-submit" value="Search"/>
+        </div>
+      </form>
+
   </body>
 </html>
