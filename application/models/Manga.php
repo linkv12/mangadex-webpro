@@ -15,27 +15,41 @@ class Manga extends CI_Model {
       // Panggil Fungsi isExist
       // Jika isExist mengembalikan True, maka Register return False
       // Jika tidak maka masukkan data ke database
-      if($this->isExist($data['Username'])) {
+      if($this->isExist($data['Title'])) {
           return false;
       } else {
           // Masukkan data ke table Register
           // Masukkan data ke table login
-          $this->db->insert('register',$data);
-          $this->db->insert('login',array("Username"=>$data['Username'], "Pass"=>$data['Pass']));
+          $this->db->insert('manga',$data);
+          $this->db->where('Title', $data['Title']);
+          $this->db->from('manga');
+          $query = $this->db->get();
+          $id_manga = $query->row_array();
+          $this->db->insert('manga_stat', array('idManga' => $id_manga['idManga']));
           return True;
       }
   }
 
 
   public function searchManga($title) {
-      // Nomor 7
-      // Ambil data yang diinputkan user
-      // Cari apakah data ada pada table login
-      // Kembalikan hasil dari pencarian
+      // Mencari manga
+      // mengambil data $title dari parameter
+      // akan mencari data pada manga dan manga_alt_title
+      // Kembalikan hasil pencarian
       $this->db->like('Title', $title);
       $this->db->from('manga');
       $query = $this->db->get();
       $result = $query->result_array();
+      foreach ($result as $value) {
+        // code...
+        echo "</br>".$value['idManga'];
+        echo "</br>".$value['Title'];
+        echo "</br>".$value['Author'];
+        echo "</br>".$value['Artist'];
+        echo "</br>".$value['description'];
+        echo "</br>".$value['cover'];
+        echo "</br>".$value['pub_status'];
+      }
       #echo $row['Username'].'</br>';
       #echo $row['Pass'].'</br>';
       #echo password_verify($this->input->post('your_pass'), $row['Pass']).'</br>';
@@ -71,7 +85,8 @@ class Manga extends CI_Model {
         #  echo $row['pub_status'];
         #  echo "</br>";
         #}
-        echo $query->num_rows()."</br>";
+        echo "Found in manga alt name : ".$query2->num_rows().'</br>';
+        echo "Found in manga          : ".$query->num_rows()."</br>";
         return $query->num_rows();
     }
 
@@ -99,6 +114,29 @@ class Manga extends CI_Model {
     }
     public function imageUpload($imgName) {
         $this->db->insert('image_path', array('ImgName' => $imgName));
+    }
+
+    public function getChapter($id_manga){
+      $this->db->where('idManga', $id_manga);
+      $this->db->from('chapter');
+      $query = $this->db->get();
+
+      $row_arr = $query->result_array();
+      foreach ($row_arr as $value) {
+        // code...
+        echo "</br>"."Currently at getChapter at id_manga :  ".$id_manga."</br>";
+        echo "</br>".$value['idChapter'];
+        echo "</br>".$value['idManga'];
+        echo "</br>".$value['chapter_number'];
+        echo "</br>".$value['chapter_title'];
+        echo "</br>".$value['idScanGroup'];
+        echo "</br>".$value['uploader'];
+        echo "</br>".$value['view'];
+        echo "</br>".$value['upload_time'];
+        echo "</br>";
+      }
+
+
     }
     public function getImage() {
         // Nomor 8

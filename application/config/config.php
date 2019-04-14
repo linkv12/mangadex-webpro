@@ -21,9 +21,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | If you need to allow multiple domains, remember that this file is still
 | a PHP script and you can easily do that on your own.
-|
+| http://192.168.88.253/mangadex/
+| http://localhost/mangadex/'
+| 192.168.137.131
 */
-$config['base_url'] = 'http://localhost/mangadex/';
+$config['base_url'] = 'http://192.168.137.131/mangadex/';
 
 /*
 |--------------------------------------------------------------------------
