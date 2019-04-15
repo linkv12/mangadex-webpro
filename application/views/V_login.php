@@ -1,4 +1,9 @@
 	<div class="container" role="main" id="content">
+		<?php if($this->session->flashdata('logfail')){ ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Failed :</strong> Username or Password is wrong
+			</div>
+		<?php } ?>
 		<div id="announcement" class="alert alert-info fade show text-center" role="alert">
 			<strong>Announcement (Apr-06):</strong> Check out our latest interview with TheElusiveTaco! <a title="Go to forum thread" href="https://mangadex.org/thread/72221"><span class="fa fa-external-link fa-fw " aria-hidden="true" title="Forum thread"></span></a></div>
 			<script src="./Login - MangaCat_files/api.js.download"></script>
@@ -20,7 +25,7 @@
 						<input tabindex="4" type="checkbox" class="" id="remember_me" name="remember_me" value="1">
 						<label class="" for="remember_me">Remember me</label>
 					</div>
-					<button tabindex="5" class="btn btn-lg btn-success btn-block" type="submit" id="login_button"><span class="fa fa-sign-in fa-fw " aria-hidden="true"></span> Login</button>
+					<button tabindex="5" class="btn btn-lg btn-success btn-block" type="submit" id="login_button"><span class="fa fa-sign-in fa-fw" name="login_process" aria-hidden="true"></span> Login</button>
 					<a tabindex="6" href="#" class="btn btn-lg btn-warning btn-block" id="forgot_button"><span class="fa fa-sync fa-fw " aria-hidden="true"></span> Reset password</a>
 					<a tabindex="7" href="<?= base_url()?>C_register" class="btn btn-lg btn-info btn-block" id="signup_button"><span class="fa fa-pencil fa-fw " aria-hidden="true"></span> Sign up</a>
 				</form>

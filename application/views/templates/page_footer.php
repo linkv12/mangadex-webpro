@@ -137,10 +137,106 @@
 									</form>
 								</div>
 								<div class="modal-footer">
-									<div class="alert alert-info mx-auto text-center" role="alert"><strong>Info:</strong> These settings are temporary. Please <span class="fa fa-pencil fa-fw " aria-hidden="true"></span> <a href="https://mangadex.org/signup">make an account</a> to remember these permanently.</div> </div>
+									<div class="alert alert-info mx-auto text-center" role="alert"><strong>Info:</strong> These settings are temporary. Please <span class="fa fa-pencil fa-fw " aria-hidden="true"></span> <a href="<?php base_url() ?>C_register">make an account</a> to remember these permanently.</div> </div>
 								</div>
 							</div>
 						</div>
+
+						<div class="modal left fade" id="left_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content border-0">
+										<nav class="navbar fixed-top text-nowrap navbar-light bg-light">
+											<div class="container p-0">
+												<div class="dropdown">
+													<?php if(!isset($_SESSION['username'])) { ?>
+													<a href="#" class="dropdown-toggle no-underline" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+														<span class="fa fa-user-times fa-fw " aria-hidden="true"></span> <span class="d-lg-none d-xl-inline" style="color: #000">Guest</span>
+													</a>
+													<div class="dropdown-menu">
+														<a class="dropdown-item" href="<?= base_url() ?>C_login"><span class="fa fa-sign-in fa-fw " aria-hidden="true" title="Log in"></span> Log in</a>
+														<a class="dropdown-item" href="<?= base_url() ?>C_register"><span class="fa fa-pencil fa-fw " aria-hidden="true" title="Sign up"></span> Sign up</a>
+													</div>
+													<?php } else { ?>
+														<a href="<?= base_url()?>C_ctrlUser" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+															<span class="fa fa-user fa-fw " aria-hidden="true"></span> <span class="d-lg-none d-xl-inline" style="color: #06f"> <?= $_SESSION['username']?> </span>
+														</a>
+														<div class="dropdown-menu dropdown-menu">
+															<a class="dropdown-item" href="<?php base_url() ?>C_usrProfile">
+																<span class="fa fa-user fa-fw " aria-hidden="true" title="Profile"></span> Profile </a>
+																<a class="dropdown-item" href="#"><span class="fa fa-history fa-fw " aria-hidden="true" title="History"></span> History</a>
+																<a class="dropdown-item" href="<?= base_url() ?>C_userSetting"><span class="fa fa-cog fa-fw " aria-hidden="true" title="Settings"></span> Settings</a>
+																<div class="dropdown-divider"></div>
+																<a class="dropdown-item" href="#"><span class="fa fa-list fa-fw " aria-hidden="true" title="My list"></span> MDList</a>
+																<a class="dropdown-item" href="#"><span class="fa fa-user-friends fa-fw " aria-hidden="true" title="social"></span> Social </a>
+																<a class="dropdown-item" href="#"><span class="fa fa-exclamation-circle fa-fw " aria-hidden="true" title="notifications"></span> Notifications </a>
+																<a class="dropdown-item" href="#"><span class="fa fa-envelope fa-fw " aria-hidden="true" title="Inbox"></span> Inbox </a>
+																<div class="dropdown-divider"></div>
+																<a class="dropdown-item" href="#"><span class="fa fa-dollar-sign fa-fw " aria-hidden="true" title="support"></span> Support</a>
+																<div class="dropdown-divider"></div>
+																<a class="dropdown-item logout" href="<?php base_url()?>C_login/logout"><span class="fa fa-sign-out fa-fw " aria-hidden="true" title="Log out"></span> Log out</a>
+														</div>
+													<?php } ?>
+												</div>
+												<button class="navbar-toggler ml-auto" type="button">
+													<a class="" href="<?= base_url()?>C_login"><span class="navbar-icon"><span class="fa fa-sign-in fa-fw " aria-hidden="true"></span></span></a>
+												</button>
+											</div>
+										</nav>
+										<nav style="margin-top: 70px;" class="nav flex-column">
+											<div class="dropdown nav-link">
+												<a href="#" class="dropdown-toggle no-underline" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-book fa-fw " aria-hidden="true"></span> Manga</a>
+												<div class="dropdown-menu">
+													<a class="dropdown-item " href="#"><span class="fa fa-book fa-fw " aria-hidden="true"></span> Titles</a>
+													<a class="dropdown-item " href="#"><span class="fa fa-sync fa-fw " aria-hidden="true"></span> Updates</a>
+													<a class="dropdown-item " href="#"><span class="fa fa-search fa-fw " aria-hidden="true"></span> Search</a>
+													<a class="dropdown-item " href="#"><span class="fa fa-tv fa-fw " aria-hidden="true"></span> Featured</a>
+													<a class="dropdown-item" href="#""><span class="fa fa-question-circle fa-fw " aria-hidden="true"></span> Random</a>
+													<a class="dropdown-item " href="#"><span class="fa fa-plus-circle fa-fw " aria-hidden="true"></span> Add</a>
+												</div>
+											</div>
+											<a class="nav-link no-underline" href="#" title="You need to log in."><span class="fa fa-bookmark fa-fw " aria-hidden="true"></span> Follows</a>
+											<div class="dropdown nav-link">
+												<a href="./Login - MangaCat_files/login" class="dropdown-toggle no-underline" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-users fa-fw " aria-hidden="true"></span> Community</a>
+												<div class="dropdown-menu">
+													<a class="dropdown-item " href="#"><span class="fa fa-university fa-fw " aria-hidden="true"></span> Forums</a>
+													<a class="dropdown-item " href="#"><span class="fa fa-users fa-fw " aria-hidden="true"></span> Groups</a>
+													<a class="dropdown-item " href="#"><span class="fa fa-user fa-fw " aria-hidden="true"></span> Users</a>
+													<a class="dropdown-item" href="#" target="_blank" rel="nofollow"><span class="fa fa-discord fa-fw " aria-hidden="true" title="Rules"></span> Discord</a>
+													<a class="dropdown-item" href="#" target="_blank" rel="nofollow"><span class="fa fa-twitter fa-fw " aria-hidden="true" title="Twitter"></span> Twitter</a>
+													<a class="dropdown-item" href="#" target="_blank" rel="nofollow"><span class="fa fa-reddit fa-fw " aria-hidden="true" title="Reddit"></span> Reddit</a>
+													<a class="dropdown-item" href="#" rel="nofollow"><span class="fa fa-hashtag fa-fw " aria-hidden="true" title="IRC"></span> IRC</a>
+												</div>
+											</div>
+											<div class="dropdown nav-link">
+												<a href="./Login - MangaCat_files/login" class="dropdown-toggle no-underline" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-info-circle fa-fw " aria-hidden="true"></span> Info</a>
+												<div class="dropdown-menu">
+													<a class="dropdown-item " href="#"><span class="fa fa-clipboard fa-fw " aria-hidden="true" title="Stats"></span> Stats</a>
+													<a class="dropdown-item " href="#"><span class="fa fa-list fa-fw " aria-hidden="true" title="Rules"></span> Rules</a>
+													<a class="dropdown-item " href="#"><span class="fa fa-info fa-fw " aria-hidden="true" title="About"></span> About</a>
+													<a class="dropdown-item " href="#"><span class="fa fa-code fa-fw " aria-hidden="true" title="Change log"></span> Change log</a>
+												</div>
+											</div>
+										</nav>
+										<form id="quick_search_form_m" method="get" action="#" role="search" class="form-inline px-3 py-2">
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<select class="form-control" id="quick_search_type_m">
+														<option value="1" data-content="&lt;span class=&#39;fa fa-sitemap fa-fw &#39; aria-hidden=&#39;true&#39; &gt;&lt;/span&gt; &lt;span class=&#39;d-none d-xl-inline&#39;&gt;All&lt;/span&gt;">All</option>
+														<option selected="" value="2" data-content="&lt;span class=&#39;fas fa-book fa-fw &#39; aria-hidden=&#39;true&#39; &gt;&lt;/span&gt; &lt;span class=&#39;d-none d-xl-inline&#39;&gt;Manga&lt;/span&gt;">Manga</option>
+														<option value="3" data-content="&lt;span class=&#39;fa fa-users fa-fw &#39; aria-hidden=&#39;true&#39; &gt;&lt;/span&gt; &lt;span class=&#39;d-none d-xl-inline&#39;&gt;Groups&lt;/span&gt;">Groups</option>
+														<option value="4" data-content="&lt;span class=&#39;fa fa-user fa-fw &#39; aria-hidden=&#39;true&#39; &gt;&lt;/span&gt; &lt;span class=&#39;d-none d-xl-inline&#39;&gt;Users&lt;/span&gt;">Users</option>
+													</select>
+												</div>
+												<input type="text" class="form-control" placeholder="Quick search" name="" id="quick_search_input_m" required="">
+												<span class="input-group-append">
+													<button class="btn btn-secondary" id="quick_search_button_m" type="submit"><span class="fa fa-search fa-fw " aria-hidden="true"></span></button>
+												</span>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
 
 
 

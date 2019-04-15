@@ -1,9 +1,17 @@
 	<div class="container" role="main" id="content">
-		<?php if($this->session->flashdata('flash')) : ?>
+		<?php if($this->session->flashdata('flashemailuser')){ ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Failed :</strong> Email and Username is already registered
+			</div>
+		<?php }elseif($this->session->flashdata('flashemail')){ ?>
 			<div class="alert alert-danger text-center" role="alert">
 				<strong>Failed :</strong> Email is already registered
 			</div>
-		<?php endif; ?>
+		<?php }elseif($this->session->flashdata('flashuser')){ ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Failed :</strong> Username is already registered
+			</div>	
+		<?php } ?>
 		<div id="announcement" class="alert alert-success fade show text-center" role="alert">
 			<strong>Announcement (Apr-01):</strong> Rebranding and advertisements <a title="Go to forum thread" href="https://mangadex.org/thread/70656">
 				<span class="fa fa-external-link fa-fw " aria-hidden="true" title="Forum thread"></span></a>
