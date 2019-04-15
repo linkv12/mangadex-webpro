@@ -33,7 +33,7 @@ class UserController extends CI_Controller {
         // Panggil fungsi findUser
         // Jika User ditemukan
 				$data = $this->User->findUser();
-        if($data['Username'] !== NULL){
+        if($data['username'] !== NULL){
             // Jika rememberme dicentang
 						#echo "data found in database</br>";
             if(isset($_POST['remember-me']) && $_POST['remember-me'] === 'on') {
@@ -45,14 +45,14 @@ class UserController extends CI_Controller {
 														 	 'expire' => 3600);
 								set_cookie($cookies);
 								//echo $_POST['remember-me'];
-								redirect ('/Landing', 'refresh');
+								redirect ('/Landing/load_test_sign_in', 'refresh');
             } else {
 							#echo "dont remember-me</br>";
                 // Buatkan session dengan isi username
                 // Arahkan kembali ke Landing
-								$this->session->set_userdata(array('successLogin' => $data['Username']));
+								$this->session->set_userdata(array('successLogin' => $data['username']));
 								#echo $this->session->userdata('successLogin');
-								redirect('/Landing', 'refresh');
+								redirect('/Landing/load_test_sign_in', 'refresh');
             }
         } else {
             // Jika data tidak ditemukan
@@ -60,7 +60,7 @@ class UserController extends CI_Controller {
 						#echo "data not found illegal</br>";
 						$this->session->set_flashdata('falselogin', 'nodata');
 						#echo $this->session->userdata('falselogin');
-						redirect('/Landing', 'refresh');
+						redirect('/Landing/load_test_sign_in', 'refresh');
         }
     }
     public function Logout() {

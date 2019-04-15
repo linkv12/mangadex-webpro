@@ -6,11 +6,12 @@ class Manga extends CI_Model {
       // Pastikan password yang di insert ke database sudah di enkripsi dengan MD5
       // Pastikan tanggal dan jam yang dimasukkan ke database sudah sesuai saat login
       $data = array(
-          "Title" => filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING),
-          "Author" => filter_input(INPUT_POST, 'author', FILTER_SANITIZE_STRING),
-          "Artist" => filter_input(INPUT_POST, 'artist', FILTER_SANITIZE_STRING),
-          "description" => filter_input(INPUT_POST, 'descript', FILTER_SANITIZE_STRING),
-          "pub_status" => filter_input(INPUT_POST, 'pub_status', FILTER_SANITIZE_STRING),
+          'Title' => filter_input(INPUT_POST, 'manga_title', FILTER_SANITIZE_STRING),
+          'Author' => filter_input(INPUT_POST, 'manga_author', FILTER_SANITIZE_STRING),
+          'Artist' => filter_input(INPUT_POST, 'manga_artist', FILTER_SANITIZE_STRING),
+          'description' => filter_input(INPUT_POST, 'manga_description', FILTER_SANITIZE_STRING),
+          'og_langguage' => filter_input(INPUT_POST, 'manga_og_langguage', FILTER_SANITIZE_STRING),
+          'pub_status' => filter_input(INPUT_POST, 'manga_pub_status', FILTER_SANITIZE_STRING)
       );
       // Panggil Fungsi isExist
       // Jika isExist mengembalikan True, maka Register return False
@@ -138,15 +139,12 @@ class Manga extends CI_Model {
 
 
     }
-    public function getImage() {
-        // Nomor 8
-        // Mengambil data dari table 'image_path' dan mengembalikan data berupa array
-        $data = $this->db->get('image_path')->result_array();
-        #foreach ($data as $row) {
-        #  // code...
-        #  echo $row['No'].'</br>';
-        #  echo $row['ImgName'].'</br>';
-        #}
-        return $data;
+    public function getAllManga()
+    {
+      // code...
+      echo "xxxx</br>";
+      $qeury = $this->db->get('manga');
+      return $qeury;
     }
+
 }

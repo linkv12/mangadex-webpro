@@ -24,6 +24,32 @@ class Landing extends CI_Controller {
 		#$this->load->view('core/header',array('title' => 'Home' ));
 		#$this->load->view('home_page');
     $data = array('title' => 'Home');
-    $this->load->view('test', $data);
+    $this->load->view('testi/test_landing', $data);
+	}
+
+	public function load_test_search_manga(){
+		// code...
+		$data = array('title' => 'test_search_manga');
+		$this->load->view('testi/test_search_manga', $data);
+	}
+	public function load_test_upload_zip($value='')
+	{
+		// code...
+
+		$data = array('title' => 'test_upload_zip');
+		$this->load->view('testi/test_upload_zip', $data);
+	}
+
+	public function load_test_sign_in($value='')
+	{
+		// code...
+		$data = array('title' => 'test_login');
+		$this->load->view('testi/test_login', $data);
+	}
+	public function load_test_add_manga($value='')
+	{
+		// code...
+		$data = array('title' => 'test_add_manga');
+		$this->load->view('testi/test_add_manga', $data);
 	}
 }

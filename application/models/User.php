@@ -44,8 +44,8 @@ class User extends CI_Model {
         // Kembalikan hasil dari pencarian
         $username = filter_input(INPUT_POST, 'your_name', FILTER_SANITIZE_STRING);
         $pass = md5($this->input->post('your_pass'));
-        $this->db->where('Username', $username);
-        $this->db->where('Pass', $pass);
+        $this->db->where('username', $username);
+        $this->db->where('password', $pass);
         $this->db->from('login');
         $query = $this->db->get();
         $row = $query->row_array();
@@ -53,10 +53,10 @@ class User extends CI_Model {
         #echo $row['Pass'].'</br>';
         #echo password_verify($this->input->post('your_pass'), $row['Pass']).'</br>';
         #echo $this->input->post('your_pass').'</br>';
-        $data =  array('Username' =>  $row['Username'],
-                       'Pass' => $row['Pass']);
-        #echo "Username : ".$data['Username'].'</br>';
-        #echo "Pass     : ".$data['Pass'].'</br>';
+        $data =  array('username' =>  $row['username'],
+                       'password' => $row['password']);
+        echo "Username : ".$data['username'].'</br>';
+        echo "Pass     : ".$data['password'].'</br>';
         return $data;
     }
     public function imageUpload($imgName) {
@@ -72,5 +72,15 @@ class User extends CI_Model {
         #  echo $row['ImgName'].'</br>';
         #}
         return $data;
+    }
+
+    public function geUserData($username)
+    {
+      // code...
+      $this->db->select('username, user_level, email, avatar, idScanGroup');
+      $this->db->where('username', $username);
+      $this->db->from('user');
+      $query = $this->db->get();
+      return $query->row_array();
     }
 }
