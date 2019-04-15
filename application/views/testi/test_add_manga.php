@@ -139,6 +139,7 @@
              <?php echo 'description : '.$row['description'].'</br>'; ?>
              <?php echo 'og_langguage : '.$row['og_langguage'].'</br>'; ?>
              <?php echo 'pub_status : '.$row['pub_status'].'</br>'; ?>
+             <?php echo 'updated_on : '.$row['updated_on'].'</br>' ?>
            </br>
            </br>
            </br>

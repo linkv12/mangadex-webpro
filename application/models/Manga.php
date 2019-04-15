@@ -14,7 +14,7 @@ class Manga extends CI_Model {
           'description' => filter_input(INPUT_POST, 'manga_description', FILTER_SANITIZE_STRING),
           'og_langguage' => filter_input(INPUT_POST, 'manga_og_langguage', FILTER_SANITIZE_STRING),
           'pub_status' => filter_input(INPUT_POST, 'manga_pub_status', FILTER_SANITIZE_STRING),
-          'updated_on' => @mdate($format);
+          'updated_on' => @mdate($format)
       );
       // Panggil Fungsi isExist
       // Jika isExist mengembalikan True, maka Register return False
