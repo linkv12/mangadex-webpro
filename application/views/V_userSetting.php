@@ -869,7 +869,7 @@
 							<div class="form-group row">
 								<label for="user_bio" class="col-md-4 col-lg-3 col-xl-2 col-form-label">Biography:</label>
 								<div class="col-md-8 col-lg-9 col-xl-10">
-									<?php if($_SESSION['biography']== 'No Biography'){ echo "<textarea class='form-control' name='user_bio' id='user_bio'>"; echo"</textarea>";}else{ echo "<textarea class='form-control' name='user_bio' id='user_bio'>";echo $_SESSION['biography']; echo"</textarea>";} ?>
+									<?php if($_SESSION['biography'] == 'No Biography'){ echo "<textarea class='form-control' name='user_bio' id='user_bio'>"; echo"</textarea>";}else{ echo "<textarea class='form-control' name='user_bio' id='user_bio'>";echo $_SESSION['biography']; echo"</textarea>";} ?>
 								</div>
 							</div>
 							<div class="form-group row">
