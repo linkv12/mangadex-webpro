@@ -52,4 +52,12 @@ class Landing extends CI_Controller {
 		$data = array('title' => 'test_add_manga');
 		$this->load->view('testi/test_add_manga', $data);
 	}
+
+	public function load_test_add_chapter($idManga, $title)
+	{
+		// code...
+		$this->load->view('testi/test_add_chapter', array('idManga' => $idManga,
+																											'title' => 'test_add_chapter '.$title,
+																											'manga_title' => $title));
+	}
 }

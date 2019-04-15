@@ -36,8 +36,11 @@ class Chapter extends CI_Model {
     $this->db->where('idManga', $data['idManga']);
     $this->db->where('chapter_number', $data['chapter_number']);
     $this->db->where('idScanGroup', $data['idScanGroup']);
+    $this->db->where('upload_time', $data['upload_time']);
+    $this->db->where('uploader', $data['uploader']);
     $this->db->from('chapter');
-    $query -> $this->db->get();
+    $query = $this->db->get();
+    return $query->num_rows();
   }
     public function getChapter($id_manga){
       $this->db->where('idManga', $id_manga);
@@ -59,15 +62,10 @@ class Chapter extends CI_Model {
         echo "</br>";
       }
     }
-    public function getImage() {
-        // Nomor 8
-        // Mengambil data dari table 'image_path' dan mengembalikan data berupa array
-        $data = $this->db->get('image_path')->result_array();
-        #foreach ($data as $row) {
-        #  // code...
-        #  echo $row['No'].'</br>';
-        #  echo $row['ImgName'].'</br>';
-        #}
-        return $data;
+    public function getChapterByMangaId($idManga) {
+      $this->db->where('idManga', $idManga);
+      $this->db->from('chapter');
+      $query = $this->db->get();
+      return $query;
     }
 }

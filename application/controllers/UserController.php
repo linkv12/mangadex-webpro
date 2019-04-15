@@ -50,7 +50,9 @@ class UserController extends CI_Controller {
 							#echo "dont remember-me</br>";
                 // Buatkan session dengan isi username
                 // Arahkan kembali ke Landing
-								$this->session->set_userdata(array('successLogin' => $data['username']));
+								$data2 = $this->User->geUserData($data['username']);
+								$this->session->set_userdata(array('successLogin' => $data['username'],
+																									 'idScanGroup' => $data2['idScanGroup']));
 								#echo $this->session->userdata('successLogin');
 								redirect('/Landing/load_test_sign_in', 'refresh');
             }

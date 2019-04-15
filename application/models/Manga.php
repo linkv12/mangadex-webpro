@@ -94,30 +94,13 @@ class Manga extends CI_Model {
         return $query->num_rows();
     }
 
-    public function findManga() {
-        // Nomor 7
-        // Ambil data yang diinputkan user
-        // Cari apakah data ada pada table login
-        // Kembalikan hasil dari pencarian
-        $username = filter_input(INPUT_POST, 'your_name', FILTER_SANITIZE_STRING);
-        $pass = md5($this->input->post('your_pass'));
-        $this->db->where('Username', $username);
-        $this->db->where('Pass', $pass);
-        $this->db->from('login');
-        $query = $this->db->get();
-        $row = $query->row_array();
-        #echo $row['Username'].'</br>';
-        #echo $row['Pass'].'</br>';
-        #echo password_verify($this->input->post('your_pass'), $row['Pass']).'</br>';
-        #echo $this->input->post('your_pass').'</br>';
-        $data =  array('Username' =>  $row['Username'],
-                       'Pass' => $row['Pass']);
-        #echo "Username : ".$data['Username'].'</br>';
-        #echo "Pass     : ".$data['Pass'].'</br>';
-        return $data;
-    }
-    public function imageUpload($imgName) {
-        $this->db->insert('image_path', array('ImgName' => $imgName));
+    public function getMangaById($idManga)
+    {
+      // code...
+      $this->db->where('idManga', $idManga);
+      $this->db->from('manga');
+      $query = $this->db->get();
+      return $query->result_array();
     }
 
     public function getChapter($id_manga){

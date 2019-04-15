@@ -122,16 +122,19 @@
       <!--SCRAPR DEMO-->
       <?php
             $bef = strtotime('03-04-2019, 22:50:23');
-            $aft = strtotime('12-04-2019, 03:22:24');
+            $aft = strtotime('03-04-2019, 22:50:24');
             echo "before : ".$bef.'</br>';
             echo "after  : ".$aft.'</br>';
             echo "is aft > bef ? ".$aft>$bef.'</br>';
+            echo "elapsed aft->before : ". timespan($bef, $aft, 1);
       ?>
 
       <div class="container">
           <?php $allManga = $this->Manga->getAllManga(); ?>
           <?php foreach ($allManga->result_array() as $row): ?>
-             <img style="height: 100px; width:100px;"class="img-thumbnail" src="<?php echo base_url('assets/manga_cover/'.$row['cover']); ?>" alt="<?echo $row['Title']?>"/>
+             <img style="height: 100px; width:100px;"class="img-thumbnail" src="<?php echo base_url('assets/manga_cover/'.$row['cover']); ?>" alt="<?php echo $row['Title']?>"/>
+             <a href="<?=site_url('MangaController/load_manga_page/'.$row['idManga'].'/'.$row['Title']); ?>"> link</a>
+             <?php #echo base_url('MangaController/load_manga_page/'.$row['idManga'].'/'.$row['Title']).'</br>'; ?>
              <?php echo 'idManga : '.$row['idManga'].'</br>'; ?>
              <?php echo 'Title : '.$row['Title'].'</br>'; ?>
              <?php echo 'Author : '.$row['Author'].'</br>'; ?>
