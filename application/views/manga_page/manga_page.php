@@ -37,29 +37,6 @@ Three years later, new incidents suddenly occur, tearing apart the normalcy of t
 <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
 <link rel='canonical' href='https://mangadex.org/title/17176/mahou-shoujo-tokushuusen-asuka' /> <title>Mahou Shoujo Tokushuusen Asuka (Title) - MangaDex</title>
 
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-TS59XX9');</script>
-
-
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:regular,regularitalic,bold" rel="stylesheet">
-
-<link href="/bootstrap/css/bootstrap.css?1531971506" rel="stylesheet" />
-
-<link href="/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
-
-<link href="/scripts/owl/assets/owl.carousel.min.css" rel="stylesheet" />
-<link href="/scripts/owl/assets/owl.theme.default.min.css" rel="stylesheet" />
-
-<link href="/fontawesome/css/all.css" rel="stylesheet" />
-
-<link href="/scripts/lightbox2/css/lightbox.min.css" rel="stylesheet">
-
-<link href="/scripts/css/theme.css?1554838542" rel="stylesheet" />
-<link href="/scripts/css/Light.css?1534107774" rel="stylesheet" />
-<script type="module" src="/dist/js/bundle.prod.js"></script>
 </head>
 <body>
 
@@ -297,7 +274,6 @@ Chapter <span id="current_chapter">0</span>/? <button disabled title='You need t
 <div class="col order-lg-5"><span class='fas fa-users fa-fw ' aria-hidden='true' title='Group'></span></div>
 <div class="col-auto col-lg-1 text-right mx-1 order-lg-6"><span class='fas fa-user fa-fw ' aria-hidden='true' title='Uploader'></span></div>
 <div class="col-2 col-lg-1 text-right text-info order-lg-7"><span class='fas fa-eye fa-fw ' aria-hidden='true' title='Views'></span></div>
-</div>
 </div>
 </div>
 <div class="row no-gutters">

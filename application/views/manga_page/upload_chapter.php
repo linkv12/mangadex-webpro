@@ -25,23 +25,6 @@
 <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
 <title>Upload - MangaDex</title>
 
-
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:regular,regularitalic,bold" rel="stylesheet">
-
-<link href="/bootstrap/css/bootstrap.css?1531971506" rel="stylesheet" />
-
-<link href="/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
-
-<link href="/scripts/owl/assets/owl.carousel.min.css" rel="stylesheet" />
-<link href="/scripts/owl/assets/owl.theme.default.min.css" rel="stylesheet" />
-
-<link href="/fontawesome/css/all.css" rel="stylesheet" />
-
-<link href="/scripts/lightbox2/css/lightbox.min.css" rel="stylesheet">
-
-<link href="/scripts/css/theme.css?1554838542" rel="stylesheet" />
-<link href="/scripts/css/Light.css?1534107774" rel="stylesheet" />
-<script type="module" src="/dist/js/bundle.prod.js"></script>
 </head>
 <body>
 
