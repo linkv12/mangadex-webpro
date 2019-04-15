@@ -5,13 +5,16 @@ class Manga extends CI_Model {
       // Nomor 5
       // Pastikan password yang di insert ke database sudah di enkripsi dengan MD5
       // Pastikan tanggal dan jam yang dimasukkan ke database sudah sesuai saat login
+      $this->load->helper('date');
+      $format = "%d-%m-%Y, %H:%i:%s";
       $data = array(
           'Title' => filter_input(INPUT_POST, 'manga_title', FILTER_SANITIZE_STRING),
           'Author' => filter_input(INPUT_POST, 'manga_author', FILTER_SANITIZE_STRING),
           'Artist' => filter_input(INPUT_POST, 'manga_artist', FILTER_SANITIZE_STRING),
           'description' => filter_input(INPUT_POST, 'manga_description', FILTER_SANITIZE_STRING),
           'og_langguage' => filter_input(INPUT_POST, 'manga_og_langguage', FILTER_SANITIZE_STRING),
-          'pub_status' => filter_input(INPUT_POST, 'manga_pub_status', FILTER_SANITIZE_STRING)
+          'pub_status' => filter_input(INPUT_POST, 'manga_pub_status', FILTER_SANITIZE_STRING),
+          'updated_on' => @mdate($format);
       );
       // Panggil Fungsi isExist
       // Jika isExist mengembalikan True, maka Register return False

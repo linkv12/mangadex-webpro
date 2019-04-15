@@ -120,6 +120,14 @@
         </form>
       </div>
       <!--SCRAPR DEMO-->
+      <?php
+            $bef = strtotime('03-04-2019, 22:50:23');
+            $aft = strtotime('12-04-2019, 03:22:24');
+            echo "before : ".$bef.'</br>';
+            echo "after  : ".$aft.'</br>';
+            echo "is aft > bef ? ".$aft>$bef.'</br>';
+      ?>
+
       <div class="container">
           <?php $allManga = $this->Manga->getAllManga(); ?>
           <?php foreach ($allManga->result_array() as $row): ?>
