@@ -10,6 +10,22 @@
 					<li class="nav-item"><a class="nav-link" href="#change_password" aria-controls="change_password" data-toggle="tab"><span class="fa fa-key fa-fw " aria-hidden="true" title="Password and Security"></span> <span class="d-none d-lg-inline">Password and Security</span></a></li>
 					<li class="nav-item"><a class="nav-link" href="#upload_settings" aria-controls="upload_settings" data-toggle="tab"><span class="fa fa-upload fa-fw " aria-hidden="true" title="Upload settings"></span> <span class="d-none d-lg-inline">Upload settings</span></a></li>
 					<li class="nav-item"><a class="nav-link" href="#supporter_settings" aria-controls="supporter_settings" data-toggle="tab"><span class="fa fa-dollar-sign fa-fw " aria-hidden="true" title="Supporter settings"></span> <span class="d-none d-lg-inline">Supporter settings</span></a></li>
+					
+				<?php if($this->session->flashdata('gagal')){ ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Failed :</strong> Password lama salah, coba lagi
+			</div>
+			<?php }?>
+			<?php if($this->session->flashdata('berhasil')){ ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Success :</strong> Ganti password berhasil
+			</div>
+			<?php }?>
+			<?php if($this->session->flashdata('error')){ ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Failed :</strong> Gatau errornya apa tapi ada error lah
+			</div>
+			<?php }?>
 				</ul>
 				<!-- MODAL UNTUK TAB SITE SETTING TINGGALKAN, BELUM FUNGSIONAL -->
 				<div class="tab-content"> 
@@ -898,7 +914,7 @@
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="change_password">
 						<div class="container">
-							<form method="post" id="change_password_form">
+							<form method="post" id="change_password_form"action="<?=base_url()?>C_userSetting/changePassword">
 								<div class="form-group row">
 									<label for="old_password" class="col-md-4 col-lg-3 col-xl-2 col-form-label">Old password:</label>
 									<div class="col-md-8 col-lg-9 col-xl-10">
@@ -922,98 +938,7 @@
 								</div>
 							</form>
 						</div>
-						<div class="container mt-2">
-							<div class="form-group row">
-								<label class="col-md-4 col-lg-3 col-xl-2 col-form-label">2-Factor-Authentication:</label>
-								<div class="col-md-8 col-lg-9 col-xl-10">
-									<button id="enable_2fa_btn" class="btn btn-success" type="button">Enable 2FA</button>
-									<div id="2fa_container" class="container d-none mt-2">
-										<div class="row">
-											<div class="col col-lg-12 col-xl-4 mb-lg-1">
-												<div class="card 2fa-card-qr h-100">
-													<div class="card-header">1. Set up Authenticator App</div>
-													<div class="qr-img-wrapper text-center border-bottom">
-														<img class="qr-code">
-													</div>
-													<div class="card-body">
-														<p class="card-text">Use an authenticator app like Google authenticator to scan this QR Code or enter the code </p><pre class="code-box">%CODE%</pre> (set to time-based) to set up your authenticator for MangaDex<p></p>
-													</div>
-												</div>
-											</div>
-											<div class="col col-lg-12 col-xl-4 mb-lg-1">
-												<div class="card 2fa-card-code h-100">
-													<div class="card-header">2. Enter Code</div>
-													<div class="card-body">
-														<p class="card-text">
-															Use your authenticator app to generate a logincode and confirm it below.
-														</p>
-														<p class="card-text">
-															You'll use this method to login in the future, in addition to your username and password combination.
-														</p>
-														<input type="text" class="form-control" id="qr_confirm">
-														<div class="mt-1 mb-1 text-center confirm-2fa-errors"></div>
-													</div>
-													<div class="card-footer text-center">
-														<button id="confirm_2fa_btn" class="btn btn-success" disabled="disabled">Confirm</button>
-													</div>
-												</div>
-											</div>
-											<div class="col col-lg-12 col-xl-4 mb-lg-1">
-												<div class="card 2fa-card-recover h-100">
-													<div class="card-header">3. Save Recover Codes</div>
-													<div class="card-body">
-														<p class="card-text">
-															If you ever loose access to your authenticator, you can use any of these codes to login once per code.
-														</p>
-														<p class="card-text confirm-2fa-result">
-															<span style="font-family: monospace; color: orange; font-weight: bold">Confirm 2FA to view recovery codes</span>
-														</p>
-													</div>
-													<div class="card-footer text-center">
-														<button id="finalize_2fa_btn" class="btn btn-success" disabled="disabled">Complete 2FA Setup</button>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="container mt-4">
-							<div class="form-group row">
-								<label class="col-md-4 col-lg-3 col-xl-2 col-form-label">Browser Session:</label>
-								<div class="col-md-8 col-lg-9 col-xl-10">
-									<div id="browser_sessions_container" class="container mt-2">
-										<div class="row">
-											<div class="p-0 col-12 col-lg-9 col-xl-6">
-												<div class="card">
-													<div class="card-header">
-														Your current Browser Session
-													</div>
-													<ul class="list-group list-group-flush">
-														<li class="list-group-item" style="position:relative">
-															<a href="https://mangadex.org/ajax/actions.ajax.php?function=logout&amp;nojs=1" class="btn btn-sm btn-link session_remove_btn float-right" title="Logout"><i class="fa fa-times"></i></a>
-															<i class="fa fa-2x fa-globe float-left"></i>
-															<strong class="ml-4">Desktop browser session</strong><br>
-															<small class="ml-4"><i>Expires after 1 day of inactivity</i></small>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="form-group row">
-								<label class="col-md-4 col-lg-3 col-xl-2 col-form-label">Persistent Sessions:</label>
-								<div class="col-md-8 col-lg-9 col-xl-10">
-									<div class="alert alert-info">You have no active Remember-me Sessions for this account.</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
+						
 				<!-- BATAS BAWAH MODAL TAB SITE SETTING , TIDAK FUNGSIONAL -->
 
 

@@ -9,6 +9,7 @@ class M_register extends CI_Model
 	public $website = 'No Website';
 	public $profile_chara = "default.jpg";
 	public $biography = '';
+	public $old_pass;
 
 	public function register_newuser()
 	{
@@ -101,9 +102,16 @@ class M_register extends CI_Model
 		$this->db->update($this->_table,$data,array('id' => $_SESSION['id']));
 	}
 
+	public function fetch_pass($id)
+	{
+		$fetch_pass = $this->db->query("select * from tb_users where id = '$id'");
+		$res = $fetch_pass->result();
+	}
 
-
-
+	public function change_pass($id,$npass)
+	{
+		$update_pass = $this->db->query("Update tb_users set password='$npass' where id='$id'");
+	}
 }
 
 ?>

@@ -26,5 +26,21 @@ class C_userSetting extends CI_CONTROLLER
 		redirect('C_usrProfile');
 	}
 
+	public function changePassword()
+	{
+		$old_pass = $this->input->post('old_password');
+		$new_pass = $this->input->post('new_password1');
+		$new_passconfirm = $this->input->post('new_password2');
+		$session_id = $this->session->userdata('id');
+		$pass = $this->session->userdata('password');
+		$query = $this->db->query("select * from tb_users where id='$session_id'");
+		$row = $query->row();
+		if ((!strcmp($old_pass, $pass)) && (!strcmp($new_pass, $new_passconfirm))) {
+			$this->M_register->change_pass($session_id,$new_pass);
+			echo "Password Changed Successfully";
+		}else{
+			echo "Invalid,something wrong";
+		}
+	}
 }
 ?>
