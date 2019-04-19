@@ -19,14 +19,24 @@ class Chapter extends CI_Model {
       if($this->isExist($data)) {
           return false;
       } else {
-          // Masukkan data ke table Register
-          // Masukkan data ke table login
           $this->db->insert('manga',$data);
           $this->db->where('Title', $data['Title']);
           $this->db->from('manga');
           $query = $this->db->get();
           $id_manga = $query->row_array();
           $this->db->insert('manga_stat', array('idManga' => $id_manga['idManga']));
+          return True;
+      }
+  }
+
+  public function addChapter_array($data) {
+      // Panggil Fungsi isExist
+      if($this->isExist($data)) {
+          return false;
+      } else {
+          $this->db->insert('chapter',$data);
+          $id_chapter = $this->Chapter->getChapterId($data);
+          $this->db->insert('chapter_stat', array('idChapter' => $id_chapter));
           return True;
       }
   }
@@ -67,5 +77,20 @@ class Chapter extends CI_Model {
       $this->db->from('chapter');
       $query = $this->db->get();
       return $query;
+    }
+
+    function getChapterId($data)
+    {
+      $this->db->select('idChapter');
+      $this->db->where('idManga', $data['idManga']);
+      $this->db->where('chapter_number', $data['chapter_number']);
+      $this->db->where('chapter_title', $data['chapter_title']);
+      $this->db->where('idScanGroup', $data['idScanGroup']);
+      $this->db->where('uploader', $data['uploader']);
+      #$this->db->where('pub_status', $data['pub_status']);
+      $this->db->where('upload_time', $data['upload_time']);
+      $query = $this->db->get('chapter');
+      $result = $query->row_array();
+      return $result['idChapter'];
     }
 }

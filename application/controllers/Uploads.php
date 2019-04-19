@@ -22,14 +22,16 @@ class Uploads extends CI_Controller{
     }
     echo "idManga : ".$data['idManga'] ;
     if (!$this->Chapter->isExist($data)) {
-
                 $config = array('upload_path' => './temp_data',
                                 'allowed_types' => 'zip');
                 $this->load->library('upload', $config);
                 if (!$this->upload->do_upload('userfile')) {
                   $this->session->set_flashdata('error', $this->upload->display_errors());
-                  #redirect ('/Landing/load_test_upload_zip', 'refresh');
+                  redirect ('refresh');
                 } else {
+                  #$data['pub_status'] = $this->Manga->getpub_statusById($data['idManga']);
+                  $this->Chapter->addChapter_array($data);
+                  $data['idChapter']  = $this->Chapter->getChapterId($data);
                   $normalize_time = $date->format("HisdmY");
                   $data_upload = array('upload_data' => $this->upload->data());
                   $this->session->set_flashdata('upload_data',  $data_upload['upload_data']['file_name']);

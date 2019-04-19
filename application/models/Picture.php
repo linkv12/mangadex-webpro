@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Picture extends CI_Model {
   public function extract_zip($data, $zipdata, $manga_folder_path, $folder_path, $full_folder_path) {
+      echo $data['idChapter'].'</br>';
       echo $_SERVER['DOCUMENT_ROOT'].'</br>';
       foreach ($data as $key) {
         // code...
@@ -47,5 +48,33 @@ class Picture extends CI_Model {
           echo "</br>succes extract";
       }
       echo "</br>".$zipdata['zip_full_path'];
+      echo "</br>dir_map</br>";
+      $dir_map = directory_map($folder_path);
+      foreach ($dir_map as $val) {
+        // code...
+        echo $val.'</br>';
+        $this->Picture->add_picture(array('idChapter' => $data['idChapter'], ));
+      }
+  }
+
+  public function add_picture($data){
+    // code...
+    if (!picture_exist($data)) {
+        $this->db->insert('picture', $data);
+    }
+  }
+
+  public function picture_exist($data){
+    $this->db->where('idChapter', $data['idChapter']);
+    $this->db->where('relative_path', $data['relative_path']);
+    $this->db->where('abs_path', $data['abs_path']);
+    $this->db->where('file_name', $data['file_name']);
+    $this->db->where('picture_number', $data['picture_number']);
+    $query = $this->db->get('picture');
+    if ($query->num_rows() == 0) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }

@@ -133,4 +133,13 @@ class Manga extends CI_Model {
       return $qeury;
     }
 
+    public function getpub_statusById($idManga){
+      // code...
+      $this->db->select('pub_status');
+      $this->db->where('idManga', $idManga);
+      $query = $this->db->get('manga');
+      $pub_stat = $query->row_array();
+      return $pub_stat['pub_status'];
+    }
+
 }
