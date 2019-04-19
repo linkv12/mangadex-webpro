@@ -53,7 +53,8 @@ class Picture extends CI_Model {
       foreach ($dir_map as $val) {
         // code...
         echo $val.'</br>';
-        $this->Picture->add_picture(array('idChapter' => $data['idChapter'], ));
+        $arrayName = array('idChapter' => $data['idChapter'], );
+        $this->Picture->add_picture();
       }
   }
 
