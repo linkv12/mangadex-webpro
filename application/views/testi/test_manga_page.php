@@ -134,6 +134,9 @@
           echo 'uploader       : '.$row['uploader'].' </br> ';
           echo 'view           : '.$row['view'].' </br> ';
           echo 'upload_time    : '.$row['upload_time'].'</br></br></br>';
+          echo "<a href=\"". site_url('/Landing/load_test_load_chapter/').$title.'/'.$row['idChapter']."\">";
+          echo "<button>Click me</button>";
+          echo "</a>";
         }
       }?>
       </div>

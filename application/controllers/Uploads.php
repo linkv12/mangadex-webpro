@@ -20,7 +20,7 @@ class Uploads extends CI_Controller{
       // code...
       echo $value.'</br>';
     }
-    echo "idManga : ".$data['idManga'] ;
+    echo "idManga : ".$data['idManga'].'</br>' ;
     if (!$this->Chapter->isExist($data)) {
                 $config = array('upload_path' => './temp_data',
                                 'allowed_types' => 'zip');
@@ -46,6 +46,9 @@ class Uploads extends CI_Controller{
                                               $manga_folder,
                                               $folder_path,
                                               $full_folder_path);
+                  if (file_exists($data_upload['upload_data']['full_path'])) {
+                    unlink($data_upload['upload_data']['full_path']);
+                  }
                   #redirect ('/Landing/load_test_upload_zip', 'refresh');
                 }
     } else {

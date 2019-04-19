@@ -75,6 +75,7 @@ class Chapter extends CI_Model {
     public function getChapterByMangaId($idManga) {
       $this->db->where('idManga', $idManga);
       $this->db->from('chapter');
+      $this->db->order_by('chapter_number', 'asc');
       $query = $this->db->get();
       return $query;
     }

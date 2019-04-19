@@ -60,4 +60,10 @@ class Landing extends CI_Controller {
 																											'title' => 'test_add_chapter '.$title,
 																											'manga_title' => $title));
 	}
+
+	public function load_test_load_chapter($title, $idChapter) {
+		$this->load->view('testi/test_load_chapter', array('title' => 'read '.$title,
+																											'manga_title' => $title,
+																											'idChapter' => $idChapter));
+	}
 }

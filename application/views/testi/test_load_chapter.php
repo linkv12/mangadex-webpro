@@ -59,36 +59,33 @@
           </form>
         </div>
       </nav>
+    </div>
+    <div class="container">
+               <!-- Load user data-->
+    <?php
+      $data = $this->User->geUserData($this->session->userdata('successLogin'));
+      echo "username    : ".$data['username'].'</br>';
+      echo "user_level  : ";
+      if ($data['user_level'] == 5) {
+        echo "admin</br>";
+      } else if ($data['user_level'] == 1) {
+        echo "normal user</br>";
+      }
+      echo "email       : ".$data['email'].'</br>';
+      #echo base_url('assets/avatar'.$data['avatar']);
+     ?>
+     <img style="height: 100px; width:100px;"class="img-thumbnail" src="<?php echo base_url('assets/avatar/'.$data['avatar']); ?>" alt="avatar"/>
+    </div>
 
-      <div class="container">
-        <div class="col-md-6">
-          <strong>Upload zip :</strong>
-          <?php echo form_open_multipart('/Uploads/do_upload_zip') ?>
-          <div class="form-group">
-              <?php
-                if ($this->session->userdata('error')) {
-                  echo "Error ".$this->session->userdata('error');
-                } else if ($this->session->userdata('upload_data')) {
-                  echo "success ".$this->session->userdata('upload_data');
-                }
-               ?>
-          <div class="input-group">
-            <span class="input-group-btn">
-              <span class="btn btn-default btn-file">
-                Browse... <input type="file" name="userfile">
-              </span>
-            </span>
-            <input type="text" class="form-control" readonly>
-            <span class="input-group-btn">
-              <input type="submit" value="Upload" class="btn btn-primary">
-            </span>
-
-          </div>
-          <img class='file-upload'/>
-          </div>
+    <div class="container-fluid">
+      <?php foreach ($this->Picture->getAllChapterImage($idChapter) as $value): ?>
+        <div class="text-center">
+          <?php $src_img = base_url().$value['relative_path'].'/'.$value['file_name'];
+                #echo $src_img.'</br>' ?>
+          <img src="<?= $src_img ?>" class="img-thumbnail" alt="...">
         </div>
-      </div>
-
+      <?php endforeach; ?>
+    </div>
 
   </body>
 </html>
