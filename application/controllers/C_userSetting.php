@@ -38,9 +38,19 @@ class C_userSetting extends CI_CONTROLLER
 		if ((!strcmp($old_pass, $pass)) && (!strcmp($new_pass, $new_passconfirm))) {
 			$this->M_register->change_pass($session_id,$new_pass);
 			echo "Password Changed Successfully";
+			$this->session->set_flashdata('berhasil','berhasil');
+			redirect('C_userSetting');
 		}else{
-			echo "Invalid,something wrong";
+			$this->session->set_flashdata('gagal', 'gagal');
+			redirect('C_userSetting');
 		}
+
+
+
+		$this->load->view('templates/page_header');
+		$this->load->veiw('V_userSetting');
+		$this->load->view('templates/page_footer');
+
 	}
 }
 ?>

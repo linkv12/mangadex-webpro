@@ -3,6 +3,23 @@
 				<button id="read_announcement_button" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 				<strong>Announcement (Apr-06):</strong> Check out our latest interview with TheElusiveTaco! <a title="Go to forum thread" href="https://mangadex.org/thread/72221"><span class="fa fa-external-link fa-fw " aria-hidden="true" title="Forum thread"></span></a>
 			</div>
+			<?php if($this->session->flashdata('gagal')){ ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Failed :</strong> Gagal mengganti password, mungkin password baru tidak sama atau password lama salah
+			</div>
+			<?php }?>
+
+		<?php if($this->session->flashdata('berhasil')){ ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Success :</strong> Ganti password berhasil, silahkan logout kemudian login dengan password baru untuk menerapkan
+			</div>
+			<?php }?>
+			
+			<?php if($this->session->flashdata('error')){ ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Failed :</strong> Gatau errornya apa tapi ada error lah
+			</div>
+			<?php }?>
 
 				<ul class="nav nav-tabs mb-3" role="tablist">
 					<li class="nav-item"><a class="nav-link" href="#site_settings" aria-controls="site_settings" data-toggle="tab"><span class="fa fa-home fa-fw " aria-hidden="true" title="Site settings"></span> <span class="d-none d-lg-inline">Site settings</span></a></li>
@@ -11,21 +28,7 @@
 					<li class="nav-item"><a class="nav-link" href="#upload_settings" aria-controls="upload_settings" data-toggle="tab"><span class="fa fa-upload fa-fw " aria-hidden="true" title="Upload settings"></span> <span class="d-none d-lg-inline">Upload settings</span></a></li>
 					<li class="nav-item"><a class="nav-link" href="#supporter_settings" aria-controls="supporter_settings" data-toggle="tab"><span class="fa fa-dollar-sign fa-fw " aria-hidden="true" title="Supporter settings"></span> <span class="d-none d-lg-inline">Supporter settings</span></a></li>
 					
-				<?php if($this->session->flashdata('gagal')){ ?>
-			<div class="alert alert-danger text-center" role="alert">
-				<strong>Failed :</strong> Password lama salah, coba lagi
-			</div>
-			<?php }?>
-			<?php if($this->session->flashdata('berhasil')){ ?>
-			<div class="alert alert-danger text-center" role="alert">
-				<strong>Success :</strong> Ganti password berhasil
-			</div>
-			<?php }?>
-			<?php if($this->session->flashdata('error')){ ?>
-			<div class="alert alert-danger text-center" role="alert">
-				<strong>Failed :</strong> Gatau errornya apa tapi ada error lah
-			</div>
-			<?php }?>
+				
 				</ul>
 				<!-- MODAL UNTUK TAB SITE SETTING TINGGALKAN, BELUM FUNGSIONAL -->
 				<div class="tab-content"> 

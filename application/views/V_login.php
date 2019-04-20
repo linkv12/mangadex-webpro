@@ -1,13 +1,14 @@
 	<div class="container" role="main" id="content">
-		<?php if($this->session->flashdata('logfail')){ ?>
-			<div class="alert alert-danger text-center" role="alert">
-				<strong>Failed :</strong> Username or Password is wrong
-			</div>
-		<?php } ?>
+
 		<div id="announcement" class="alert alert-info fade show text-center" role="alert">
 			<strong>Announcement (Apr-06):</strong> Check out our latest interview with TheElusiveTaco! <a title="Go to forum thread" href="https://mangadex.org/thread/72221"><span class="fa fa-external-link fa-fw " aria-hidden="true" title="Forum thread"></span></a></div>
 			<script src="./Login - MangaCat_files/api.js.download"></script>
 			<div class="alert alert-info text-center" role="alert"><strong>Notice:</strong> Certain features disabled for guests during DDoS mitigation.</div>
+			<?php if($this->session->flashdata('logfail')){ ?>
+			<div class="alert alert-danger text-center" role="alert">
+				<strong>Failed :</strong> Username or Password is wrong
+			</div>
+		<?php } ?>
 
 			<div class="mx-auto form-narrow" id="login_container">
 				<form method="post" id="login_form" action="<?= base_url()?>C_login/login_process">
