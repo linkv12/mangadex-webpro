@@ -22,13 +22,25 @@
 			<?php }?>
 
 				<ul class="nav nav-tabs mb-3" role="tablist">
-					<li class="nav-item"><a class="nav-link" href="#site_settings" aria-controls="site_settings" data-toggle="tab"><span class="fa fa-home fa-fw " aria-hidden="true" title="Site settings"></span> <span class="d-none d-lg-inline">Site settings</span></a></li>
-					<li class="nav-item"><a class="nav-link active show" href="#change_profile" aria-controls="change_profile" data-toggle="tab"><span class="fa fa-user fa-fw " aria-hidden="true" title="Change profile"></span> <span class="d-none d-lg-inline">Change profile</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="#change_password" aria-controls="change_password" data-toggle="tab"><span class="fa fa-key fa-fw " aria-hidden="true" title="Password and Security"></span> <span class="d-none d-lg-inline">Password and Security</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="#upload_settings" aria-controls="upload_settings" data-toggle="tab"><span class="fa fa-upload fa-fw " aria-hidden="true" title="Upload settings"></span> <span class="d-none d-lg-inline">Upload settings</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="#supporter_settings" aria-controls="supporter_settings" data-toggle="tab"><span class="fa fa-dollar-sign fa-fw " aria-hidden="true" title="Supporter settings"></span> <span class="d-none d-lg-inline">Supporter settings</span></a></li>
+					<li class="nav-item">
+						<a class="nav-link" href="#site_settings" aria-controls="site_settings" data-toggle="tab">
+							<span class="fa fa-home fa-fw " aria-hidden="true" title="Site settings"></span>
+							<span class="d-none d-lg-inline">Site settings</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active show" href="#change_profile" aria-controls="change_profile" data-toggle="tab">
+							<span class="fa fa-user fa-fw " aria-hidden="true" title="Change profile"></span> 
+							<span class="d-none d-lg-inline">Change profile</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#change_password" aria-controls="change_password" data-toggle="tab">
+							<span class="fa fa-key fa-fw " aria-hidden="true" title="Password and Security"></span> 
+							<span class="d-none d-lg-inline">Password and Security</span>
+						</a>
+					</li>
 					
-				
 				</ul>
 				<!-- MODAL UNTUK TAB SITE SETTING TINGGALKAN, BELUM FUNGSIONAL -->
 				<div class="tab-content"> 
