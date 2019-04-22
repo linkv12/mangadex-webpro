@@ -31,12 +31,12 @@ class C_userSetting extends CI_CONTROLLER
 		$old_pass = $this->input->post('old_password');
 		$new_pass = $this->input->post('new_password1');
 		$new_passconfirm = $this->input->post('new_password2');
-		$session_id = $this->session->userdata('id');
+		$session_uname = $this->session->userdata('username');
 		$pass = $this->session->userdata('password');
-		$query = $this->db->query("select * from tb_users where id='$session_id'");
+		$query = $this->db->query("select * from tb_users where username='$session_uname'");
 		$row = $query->row();
 		if ((!strcmp($old_pass, $pass)) && (!strcmp($new_pass, $new_passconfirm))) {
-			$this->M_register->change_pass($session_id,$new_pass);
+			$this->M_register->change_pass($session_uname,$new_pass);
 			echo "Password Changed Successfully";
 			$this->session->set_flashdata('berhasil','berhasil');
 			redirect('C_userSetting');

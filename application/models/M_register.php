@@ -104,13 +104,13 @@ class M_register extends CI_Model
 
 	public function fetch_pass($id)
 	{
-		$fetch_pass = $this->db->query("select * from tb_users where id = '$id'");
+		$fetch_pass = $this->db->query("select * from tb_users where username = '$id'");
 		$res = $fetch_pass->result();
 	}
 
-	public function change_pass($id,$npass)
+	public function change_pass($uname,$npass)
 	{
-		$update_pass = $this->db->query("Update tb_users set password='$npass' where id='$id'");
+		$update_pass = $this->db->query("Update tb_users set password='$npass' where username='$uname'");
 	}
 }
 
