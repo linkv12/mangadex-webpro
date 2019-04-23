@@ -12,7 +12,7 @@ class Uploads extends CI_Controller{
                    'chapter_number' => filter_input(INPUT_POST, 'chapter_number', FILTER_SANITIZE_STRING),
                    'chapter_title' => filter_input(INPUT_POST, 'chapter_title', FILTER_SANITIZE_STRING),
                    'langguage' => filter_input(INPUT_POST, 'langguage', FILTER_SANITIZE_STRING),
-                   'uploader' => $this->session->userdata('successLogin'),
+                   'uploader' => $this->session->userdata('username'),
                    'idScanGroup' => $this->session->userdata('idScanGroup'),
                    'upload_time' => $result
                  );
@@ -49,7 +49,7 @@ class Uploads extends CI_Controller{
                   if (file_exists($data_upload['upload_data']['full_path'])) {
                     unlink($data_upload['upload_data']['full_path']);
                   }
-                  redirrect ('/Landing/load_test_upload_zip', 'refresh');
+                  redirect ('/C_Manga/title/'.$data['idManga'], 'refresh');
                 }
     } else {
 

@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Chapter extends CI_Model {
+class M_Chapter extends CI_Model {
+  private $_table = 'chapter';
 
   public function addChapter($idManga, $idScanGroup,$uploader) {
       // adding chapter to a manga
@@ -25,7 +26,6 @@ class Chapter extends CI_Model {
           $query = $this->db->get();
           $id_manga = $query->row_array();
           $this->db->insert('manga_stat', array('idManga' => $id_manga['idManga']));
-          $this->M_Manga->updateDate($data['upload_time'], $data['idManga']);
           return True;
       }
   }
@@ -94,5 +94,21 @@ class Chapter extends CI_Model {
       $query = $this->db->get('chapter');
       $result = $query->row_array();
       return $result['idChapter'];
+    }
+
+
+    function getLatestChapter() {
+      $this->db->limit(20);
+      $this->db->get($this->_table);
+      $this->db->order_by('upload_time', 'DESC');
+      return $this->db->get($this->_table)->result_array();
+    }
+
+    public function getChapterStat($idChapter)
+    {
+      // code...
+      $_table_name = 'chapter_stat';
+      $this->db->where('idChapter', $idChapter);
+      return $this->db->get($_table_name)->row_array();
     }
 }

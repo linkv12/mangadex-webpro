@@ -2,9 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Model {
     public function Register() {
-        // Nomor 5
-        // Pastikan password yang di insert ke database sudah di enkripsi dengan MD5
-        // Pastikan tanggal dan jam yang dimasukkan ke database sudah sesuai saat login
         $this->load->helper('date');
         $format = "%d-%m-%Y, %H:%i:%s";
         $data = array(
@@ -13,14 +10,9 @@ class User extends CI_Model {
             "Pass" => md5($this->input->post('pass')),
             "RegisTime" => @mdate($format)
         );
-        // Panggil Fungsi isExist
-        // Jika isExist mengembalikan True, maka Register return False
-        // Jika tidak maka masukkan data ke database
         if($this->isExist($data['Username'])) {
             return false;
         } else {
-            // Masukkan data ke table Register
-            // Masukkan data ke table login
             $this->db->insert('regis',array("username" => $data['Username'],
                                             "email" => $data['Email'],
                                             "regis_time" => $data['RegisTime']));
@@ -38,10 +30,7 @@ class User extends CI_Model {
         return $query->num_rows();
     }
     public function findUser() {
-        // Nomor 7
-        // Ambil data yang diinputkan user
-        // Cari apakah data ada pada table login
-        // Kembalikan hasil dari pencarian
+
         $username = filter_input(INPUT_POST, 'your_name', FILTER_SANITIZE_STRING);
         $pass = md5($this->input->post('your_pass'));
         $this->db->where('username', $username);
@@ -63,8 +52,6 @@ class User extends CI_Model {
         $this->db->insert('image_path', array('ImgName' => $imgName));
     }
     public function getImage() {
-        // Nomor 8
-        // Mengambil data dari table 'image_path' dan mengembalikan data berupa array
         $data = $this->db->get('image_path')->result_array();
         #foreach ($data as $row) {
         #  // code...

@@ -55,26 +55,10 @@ class M_register extends CI_Model
 	public function user_auth($uname, $passwd)
 	{
 		$this->db->where('username', $uname);
-		$this->db->where('password', $passwd);
+		# accounting to standard encryption
+		$this->db->where('password', md5($passwd));
 		$this->db->from('user');
 		$query = $this->db->get();
-		echo '</br>'.$uname.' - '.$passwd.' - '.$this->_table;
-		echo "</br>".$query->num_rows();
-
-		#foreach ($this->db->get($this->_table)->result_array() as $value) {
-		foreach ($query->result_array() as $value) {
-			// code...
-			echo '</br>'.$value['username'];
-			echo '</br>'.$value['user_level'];
-			echo '</br>'.$value['email'];
-			echo '</br>'.$value['password'];
-			echo '</br>'.$value['website'];
-			echo '</br>'.$value['avatar'];
-			echo '</br>'.$value['biography'];
-			echo '</br>'.$value['idSetting'];
-			echo '</br>'.$value['idScanGroup'];
-		}
-
 		return $query->row_array();
 	}
 

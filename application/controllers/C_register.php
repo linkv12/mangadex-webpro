@@ -14,7 +14,7 @@ class C_register extends CI_CONTROLLER
 		if(isset($_SESSION['Username'])){
 			redirect('C_usrProfile');
 		}
-		$this->load->view('templates/page_header');
+		$this->load->view('templates/page_header', array('title' => "Register"));
 		$this->load->view('V_register');
 		$this->load->view('templates/page_footer');
 	}

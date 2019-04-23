@@ -1,6 +1,6 @@
-<?php 
+<?php
 class C_userSetting extends CI_CONTROLLER
-{	
+{
 	private $image = 'default.jpg';
 
 	public function __construct()
@@ -15,7 +15,7 @@ class C_userSetting extends CI_CONTROLLER
 		if(!isset($_SESSION['username'])){
 			redirect('C_login');
 		}
-		$this->load->view('templates/page_header');
+		$this->load->view('templates/page_header', array('title' => "Setting"));
 		$this->load->view('V_userSetting');
 		$this->load->view('templates/page_footer');
 	}

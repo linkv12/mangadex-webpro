@@ -1,20 +1,30 @@
 <div class="container" role="main" id="content">
-			
+
 			<div id="announcement" class="alert alert-info alert-dismissible fade show text-center" role="alert">
 				<button id="read_announcement_button" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 				<strong>Announcement (Apr-06):</strong> Check out our latest interview with TheElusiveTaco! <a title="Go to forum thread" href="https://mangadex.org/thread/72221"><span class="fa fa-external-link fa-fw " aria-hidden="true" title="Forum thread"></span></a></div>
-				
+
 				<div class="card mb-3">
 					<h6 class="card-header d-flex align-items-center py-2">
 						<span class="fa fa-user fa-fw " aria-hidden="true"></span> <span class="mx-1"><?= $_SESSION['username']?></span>
 						<span class="rounded flag flag-gb" title="English"></span> <a class="ml-auto" target="_blank" href="https://mangadex.org/rss/sQeGay8r9wSDTphFbCtqYuHv6MPEc5XK/user_id/254253"><span class="fa fa-rss fa-2x"></span></a> </h6>
 						<div class="card-body p-0">
 							<div class="row edit">
-								<div class="col-xl-3 col-lg-4 col-md-5"><img class="rounded avatar-fit mt-2" alt="Avatar" src="<?php base_url()?>upload/profile/<?= $_SESSION['profile_chara']?>"></div>
+								<!-- Adjusted to folder structure-->
+								<div class="col-xl-3 col-lg-4 col-md-5"><img class="rounded avatar-fit mt-2" alt="Avatar" src="<?= base_url('assets/avatar/'.$_SESSION['avatar']);?>"></div>
 								<div class="col-xl-9 col-lg-8 col-md-7">
 									<div class="row m-0 py-1 px-0">
 										<div class="col-lg-3 col-xl-2 strong">User level:</div>
-										<div class="col-lg-9 col-xl-10"><span class="fa fa-graduation-cap fa-fw " aria-hidden="true"></span> <span style="color: #06f; ">Member</span></div>
+										<!--# will adjusted to data-->
+										<div class="col-lg-9 col-xl-10"><span class="fa fa-graduation-cap fa-fw " aria-hidden="true"></span> <span style="color: #06f; ">
+											<?php
+													if ($_SESSION['user_level'] == 5) {
+														echo "Admin";
+													} else if ($_SESSION['user_level'] == 1) {
+														echo "Member";
+													}
+											 ?>
+										</span></div>
 									</div>
 									<div class="row m-0 py-1 px-0 border-top">
 										<div class="col-lg-3 col-xl-2 strong">Joined:</div>
@@ -26,7 +36,16 @@
 									</div>
 									<div class="row m-0 py-1 px-0 border-top">
 										<div class="col-lg-3 col-xl-2 strong">Group(s):</div>
-										<div class="col-lg-9 col-xl-10">None</div>
+										<div class="col-lg-9 col-xl-10">
+											<?php
+												if ($_SESSION['idScanGroup'] == null) {
+													echo "None";
+												} else {
+													echo $this->M_Group->getGroupName($_SESSION['idScanGroup']);
+												}
+
+											 ?>
+										</div>
 									</div>
 									<div class="row m-0 py-1 px-0 border-top">
 										<div class="col-lg-3 col-xl-2 strong">Stats:</div>
@@ -59,4 +78,4 @@
 
 					<div class="tab-content">
 						<div class="alert alert-info mt-3 text-center" role="alert"><strong>Notice:</strong> This user hasn't uploaded any chapters yet.</div></div>
-					</div> 
+					</div>
