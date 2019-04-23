@@ -10,7 +10,7 @@
 			<?php }?>
 
 		<?php if($this->session->flashdata('berhasil')){ ?>
-			<div class="alert alert-danger text-center" role="alert">
+			<div class="alert alert-success text-center" role="alert">
 				<strong>Success :</strong> Ganti password berhasil, silahkan logout kemudian login dengan password baru untuk menerapkan
 			</div>
 			<?php }?>

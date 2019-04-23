@@ -9,6 +9,12 @@
 				<strong>Failed :</strong> Username or Password is wrong
 			</div>
 		<?php } ?>
+		<?php if($this->session->flashdata('berhasilregister')){ ?>
+			<div class="alert alert-success text-center" role="alert">
+				<strong>Success :</strong> Registration is successfull, please login to your account
+			</div>
+		<?php } ?>
+		
 
 			<div class="mx-auto form-narrow" id="login_container">
 				<form method="post" id="login_form" action="<?= base_url()?>C_login/login_process">

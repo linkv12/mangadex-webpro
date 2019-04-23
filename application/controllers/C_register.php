@@ -41,6 +41,7 @@ class C_register extends CI_CONTROLLER
 				redirect('C_register');
 			else:
 				$this->M_register->register_newuser();
+				$this->session->set_flashdata('berhasilregister', 'anda berhasil');
 				redirect('C_login');
 			endif;
 		endif;
