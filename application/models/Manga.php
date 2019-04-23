@@ -141,5 +141,14 @@ class Manga extends CI_Model {
       $pub_stat = $query->row_array();
       return $pub_stat['pub_status'];
     }
+    public function getLatestManga($value='')
+    {
+      // code...
+      $this->db->order_by('updated_on', 'DESC');
+      $this->db->limit(20);
+      $query = $this->db->get('manga')->result_array();
+
+      return $query;
+    }
 
 }

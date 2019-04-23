@@ -49,7 +49,7 @@ class Uploads extends CI_Controller{
                   if (file_exists($data_upload['upload_data']['full_path'])) {
                     unlink($data_upload['upload_data']['full_path']);
                   }
-                  #redirect ('/Landing/load_test_upload_zip', 'refresh');
+                  redirrect ('/Landing/load_test_upload_zip', 'refresh');
                 }
     } else {
 

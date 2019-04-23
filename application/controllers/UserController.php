@@ -45,7 +45,7 @@ class UserController extends CI_Controller {
 														 	 'expire' => 3600);
 								set_cookie($cookies);
 								//echo $_POST['remember-me'];
-								redirect ('/Landing/load_test_sign_in', 'refresh');
+								redirect ('/Temp_Landing', 'refresh');
             } else {
 							#echo "dont remember-me</br>";
                 // Buatkan session dengan isi username
@@ -54,7 +54,7 @@ class UserController extends CI_Controller {
 								$this->session->set_userdata(array('successLogin' => $data['username'],
 																									 'idScanGroup' => $data2['idScanGroup']));
 								#echo $this->session->userdata('successLogin');
-								redirect('/Landing/load_test_sign_in', 'refresh');
+								redirect('/Temp_Landing', 'refresh');
             }
         } else {
             // Jika data tidak ditemukan
@@ -69,10 +69,10 @@ class UserController extends CI_Controller {
         $cookie = $this->input->cookie('logged');
         if(isset($cookie)) {
             delete_cookie(logged);
-            redirect('Landing');
+            redirect('Temp_Landing/index', 'refresh');
         } else {
             session_destroy();
-            redirect('Landing');
+            redirect('Temp_Landing/index', 'refresh');
         }
     }
 }
