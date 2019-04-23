@@ -86,25 +86,23 @@ class M_register extends CI_Model
 		$this->username = $_SESSION['username'];
 		$this->password = $_SESSION['password'];
 		$this->joined_date = $_SESSION['joined_date'];
-		$this->email = $_SESSION['email'];
-
+		$this->old_file = $_SESSION['avatar'];
+		
 		if(!empty($_FILES['old_file']['file'])){
 			$this->image = $this->upload_profileChara();
 		}else{
 			$this->image = $_SESSION['avatar'];
 		}
-
-
 		$data = [
 			"username" => $this->username,
 			"password" => $this->password,
 			"email" => $this->email,
 			"joined_date" => $this->joined_date,
 			"website" => $this->input->post('website',true),
-			"avatar" => $this->$image,
+			"avatar" => $this->image,
 			"biography" => $this->input->post('user_bio',true),
 		];
-		$this->db->update($this->_table,$data,array('id' => $_SESSION['id']));
+		$this->db->update($this->_table,$data,array('username' => $_SESSION['username']));
 	}
 
 	public function fetch_pass($id)
