@@ -64,7 +64,8 @@ class M_register extends CI_Model
 
 	public function upload_profileChara()
 	{
-		$config['upload_path']		='./upload/profile/';
+		#base_url('assets/avatar/'.$_SESSION['avatar']);
+		$config['upload_path']		='./assets/avatar/';
 		$config['allowed_types']	='gif|jpg|png';
 		$config['file_name']		= $_SESSION['username'];
 		$config['overwrite']		= true;
@@ -76,7 +77,7 @@ class M_register extends CI_Model
     	if($this->upload->do_upload('old_file')){
     		return $this->upload->data('file');
     	}
-    	return 'default.jpg';
+    	return 'default_avatar.jpg';
 	}
 
 
@@ -90,7 +91,7 @@ class M_register extends CI_Model
 		if(!empty($_FILES['old_file']['file'])){
 			$this->image = $this->upload_profileChara();
 		}else{
-			$this->image = $_SESSION['profile_chara'];
+			$this->image = $_SESSION['avatar'];
 		}
 
 
@@ -100,7 +101,7 @@ class M_register extends CI_Model
 			"email" => $this->email,
 			"joined_date" => $this->joined_date,
 			"website" => $this->input->post('website',true),
-			"profile_chara" => $this->$image,
+			"avatar" => $this->$image,
 			"biography" => $this->input->post('user_bio',true),
 		];
 		$this->db->update($this->_table,$data,array('id' => $_SESSION['id']));

@@ -854,7 +854,7 @@
 						</form>
 					</div>
 					<div role="tabpanel" class="tab-pane fade active show" id="change_profile">
-						<form method="post" id="change_profile_form" action="<?= base_url() ?>C_userSetting/userEdit">
+						<form method="post" id="change_profile_form" action="<?= site_url('C_userSetting/userEdit') ?>">
 							<div class="form-group row">
 								<label for="username" class="col-md-4 col-lg-3 col-xl-2 col-form-label">Username:</label>
 								<div class="col-md-8 col-lg-9 col-xl-10">
@@ -919,7 +919,7 @@
 							<div class="form-group row">
 								<label for="avatar" class="col-md-4 col-lg-3 col-xl-2 col-form-label">Current avatar:</label>
 								<div class="col-md-8 col-lg-9 col-xl-10">
-									<img class="rounded avatar mt-2" alt="Avatar" src="<?= base_url() ?>upload/profile/<?= $_SESSION['profile_chara'] ?>">
+									<img class="rounded avatar mt-2" alt="Avatar" src="<?= base_url('assets/avatar/'.$_SESSION['avatar']);?>">
 								</div>
 							</div>
 							<div class="text-center">
@@ -929,7 +929,7 @@
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="change_password">
 						<div class="container">
-							<form method="post" id="change_password_form"action="<?=base_url()?>C_userSetting/changePassword">
+							<form method="post" id="change_password_form"action="<?=site_url('C_userSetting/changePassword')?>">
 								<div class="form-group row">
 									<label for="old_password" class="col-md-4 col-lg-3 col-xl-2 col-form-label">Old password:</label>
 									<div class="col-md-8 col-lg-9 col-xl-10">
