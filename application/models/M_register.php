@@ -1,0 +1,137 @@
+<?php
+class M_register extends CI_Model
+{
+	private $_table = 'user';
+
+	public $username;
+	public $user_level;
+	public $password;
+	public $email;
+	public $website = 'No Website';
+	public $avatar = "default_avatar.png";
+	public $biography = '';
+	public $old_pass;
+	public $idSetting;
+	public $idScanGroup;
+
+	public function register_newuser()
+	{
+		$joined_date  = date('Y-m-d H:i:s');
+		$data = [
+			"username" => $this->input->post('reg_username',true),
+			"password" => $this->input->post('reg_pass1',true),
+			"email" => $this->input->post('reg_email1',true),
+			"joined_date" => $joined_date,
+			"website" => 'No Website',
+			"avatar" => 'default.jpg',
+			"biography" => 'No Biography'
+		];
+		return $this->db->insert($this->_table,$data);
+	}
+
+	public function isEmailRegistered($email)
+	{
+		$this->db->where('email',$email);
+		$query = $this->db->get($this->_table);
+		if($query->num_rows()>0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+
+	}
+
+	public function isUnameRegistered($uname)
+	{
+		$this->db->where('username',$uname);
+		$query = $this->db->get($this->_table);
+		if($query->num_rows()>0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	public function user_auth($uname, $passwd)
+	{
+		$this->db->where('username', $uname);
+		$this->db->where('password', $passwd);
+		$this->db->from('user');
+		$query = $this->db->get();
+		echo '</br>'.$uname.' - '.$passwd.' - '.$this->_table;
+		echo "</br>".$query->num_rows();
+
+		#foreach ($this->db->get($this->_table)->result_array() as $value) {
+		foreach ($query->result_array() as $value) {
+			// code...
+			echo '</br>'.$value['username'];
+			echo '</br>'.$value['user_level'];
+			echo '</br>'.$value['email'];
+			echo '</br>'.$value['password'];
+			echo '</br>'.$value['website'];
+			echo '</br>'.$value['avatar'];
+			echo '</br>'.$value['biography'];
+			echo '</br>'.$value['idSetting'];
+			echo '</br>'.$value['idScanGroup'];
+		}
+
+		return $query->row_array();
+	}
+
+	public function upload_profileChara()
+	{
+		$config['upload_path']		='./upload/profile/';
+		$config['allowed_types']	='gif|jpg|png';
+		$config['file_name']		= $_SESSION['username'];
+		$config['overwrite']		= true;
+		$config['max_size']			=2048;
+		// $config['max_width']            = 1024;
+    	// $config['max_height']           = 768;
+
+    	$this->load->library('upload', $config);
+    	if($this->upload->do_upload('old_file')){
+    		return $this->upload->data('file');
+    	}
+    	return 'default.jpg';
+	}
+
+
+	public function updateprofile()
+	{
+		$this->username = $_SESSION['username'];
+		$this->password = $_SESSION['password'];
+		$this->joined_date = $_SESSION['joined_date'];
+		$this->email = $_SESSION['email'];
+
+		if(!empty($_FILES['old_file']['file'])){
+			$this->image = $this->upload_profileChara();
+		}else{
+			$this->image = $_SESSION['profile_chara'];
+		}
+
+
+		$data = [
+			"username" => $this->username,
+			"password" => $this->password,
+			"email" => $this->email,
+			"joined_date" => $this->joined_date,
+			"website" => $this->input->post('website',true),
+			"profile_chara" => $this->$image,
+			"biography" => $this->input->post('user_bio',true),
+		];
+		$this->db->update($this->_table,$data,array('id' => $_SESSION['id']));
+	}
+
+	public function fetch_pass($id)
+	{
+		$fetch_pass = $this->db->query("select * from ".$this->_table." where username = '$id'");
+		$res = $fetch_pass->result();
+	}
+
+	public function change_pass($uname,$npass)
+	{
+		$update_pass = $this->db->query("Update ".$this->_table." set password='$npass' where username='$uname'");
+	}
+}
+
+?>
