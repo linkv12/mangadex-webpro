@@ -88,6 +88,20 @@
                                   </button>
                                 </form>
                               <?php endif; ?>
+                              <?php if ($this->session->userdata['user_level'] && $this->session->userdata['user_level']==5): ?>
+                                <form action="<?= site_url('C_Manga/updateManga/'.$data['idManga'])?>" method="get">
+                                  <button class='btn btn-secondary' id='update_button' type="submit" title='Update'>
+                                    <span class='fas fa-upload fa-fw ' aria-hidden='true' title='Update'></span>
+                                    <span class='d-none d-xl-inline'>Update chapter</span>
+                                  </button>
+                                </form>
+                                <form action="<?= site_url('C_Manga/deleteManga/'.$data['idManga'])?>" method="get">
+                                  <button class='btn btn-secondary' id='delete_button' type="submit" title='Delete'>
+                                    <span class='fas fa-upload fa-fw ' aria-hidden='true' title='Delete'></span>
+                                    <span class='d-none d-xl-inline'>Delete chapter</span>
+                                  </button>
+                                </form>
+                              <?php endif; ?>
   													</div>
   												</div>
   											</div>

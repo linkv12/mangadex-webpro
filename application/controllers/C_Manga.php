@@ -46,5 +46,60 @@
 				redirect('/Welcome', 'refresh');
 			}
 		}
+
+		public function updateManga($idManga)
+		{
+			// code...
+			$this->load->view('templates/page_header', array('title' => 'Update Manga'));
+			#$this->load->view('testi/test_login');
+			$this->load->view('V_Update_Manga',  array('idManga' => $idManga ));
+			$this->load->view('templates/page_footer');
+		}
+
+		public function deleteManga($idManga)
+		{
+			// code...
+			$this->load->view('templates/page_header', array('title' => 'Update Manga'));
+			#$this->load->view('testi/test_login');
+			$this->load->view('V_Delete_Manga',  array('idManga' => $idManga ));
+			$this->load->view('templates/page_footer');
+		}
+
+
+		public function updateProcessManga()
+		{
+			// code...
+			$idManga = filter_input(INPUT_POST, 'manga_id', FILTER_SANITIZE_STRING);
+			$this->load->helper('date');
+			$format = "%d-%m-%Y, %H:%i:%s";
+			$data = array(
+					'Title' => filter_input(INPUT_POST, 'manga_title', FILTER_SANITIZE_STRING),
+					'Author' => filter_input(INPUT_POST, 'manga_author', FILTER_SANITIZE_STRING),
+					'Artist' => filter_input(INPUT_POST, 'manga_artist', FILTER_SANITIZE_STRING),
+					'description' => filter_input(INPUT_POST, 'manga_description', FILTER_SANITIZE_STRING),
+					'og_langguage' => filter_input(INPUT_POST, 'manga_og_langguage', FILTER_SANITIZE_STRING),
+					'pub_status' => filter_input(INPUT_POST, 'manga_pub_status', FILTER_SANITIZE_STRING),
+					'updated_on' => @mdate($format)
+			);
+			$this->M_Manga->updatingManga($idManga,$data);
+			#echo $idManga.'</br>';
+			#foreach ($data as $value) {
+				// code...
+			#	echo $value.'</br>';
+			#}
+			redirect ('/', 'refresh');
+		}
+
+		public function deleteProcessManga()
+		{
+			// code...
+			$quest = filter_input(INPUT_POST, 'quest', FILTER_SANITIZE_STRING);
+			$idManga = filter_input(INPUT_POST, 'manga_id', FILTER_SANITIZE_STRING);
+			if ($quest == 'Y' || $quest == 'y' || $quest == 'yes' ) {
+				// code...
+					$this->M_Manga->deletingManga($idManga);
+			}
+			redirect('/', 'refresh');
+		}
 	}
 ?>

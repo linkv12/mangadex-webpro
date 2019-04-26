@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | 192.168.137.131
 | 192.168.88.253
 */
-$config['base_url'] = 'http://192.168.88.253/mangadex/';
+$config['base_url'] = 'http://localhost/mangadex/';
 
 /*
 |--------------------------------------------------------------------------

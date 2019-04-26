@@ -241,4 +241,19 @@ class M_Manga extends CI_Model {
       return $this->db->get($_table_name)->row_array();
     }
 
+    public function updatingManga($idManga,$data)
+    {
+      $this->db->where('idManga', $idManga);
+      $this->db->update('manga', $data);
+      return True;
+    }
+
+    public function deletingManga($idManga)
+    {
+      // code...
+      $this->db->where('idManga', $idManga);
+      $this->db->delete('manga');
+      return True;
+    }
+
 }
